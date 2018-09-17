@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-advanced",
-  "description": "GatsbyJS starter that includes examples for advanced use cases.",
-  "version": "1.1.0",
-  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
+  "name": "xiaocaoge",
+  "description": "My blog",
+  "private": true,
   "dependencies": {
     "gatsby": "next",
     "gatsby-image": "next",
@@ -57,7 +56,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
