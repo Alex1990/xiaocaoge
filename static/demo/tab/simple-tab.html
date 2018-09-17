@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Tabbed Nav</title>
+    <style type="text/css">
+        div,h4,ul,li,a,p {
+            margin:0;
+            padding:0;
+        }
+        body {
+            font:16px/1.6 Arial, sans-serif;
+        }
+        .cf:after {
+            content:'';
+            height:0;
+            visibility:hidden;
+            display:block;
+            clear:both;
+        }
+        .cf {
+            zoom:1;
+        }
+        .tab ul {
+            position:relative;
+            list-style:none;
+            width:256px;
+            background:#333;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .tab li {
+            float:left;
+        }
+        .tab h4 {
+            font-weight:normal;
+        }
+        .tab a {
+            display:block;
+            padding:5px 10px;
+            text-decoration:none;
+            line-height:1;
+            color:#fff;
+            border-left:1px solid #888;
+            zoom:1;
+       }
+       .tab li:first-child a {
+            border-left:none;
+            border-top-left-radius: 5px;
+        }
+       .tab a:hover {
+            background:#888;
+        }
+       .tab .content {
+            position:absolute;
+            top:26px;
+            left:0;
+            padding:10px;
+            width:234px;
+            border:1px solid #555;
+            border-top:none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background:#fff;
+        }
+        .tab li:first-child .content {
+            z-index:1;
+        }
+        .tab li:hover .content {
+            z-index:2;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+        <h1>Simple Tabbed Nav</h1>
+        <p>Compatibility: IE7+,Ch,FF,SF,Op</p>
+        <div class="tab">
+            <ul class="cf">
+            	<li><h4><a href="">HTML</a></h4>
+                    <div class="content">
+                        <p>HyperText Markup Language</p>
+                    </div>
+                </li>
+            	<li><h4><a href="">CSS</a></h4>
+                    <div class="content">
+                    	<p>Casecading Style Sheet</p>
+                    </div>
+                </li>
+            	<li><h4><a href="">Javascript</a></h4>
+                    <div class="content">
+                    	<p>A web language</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>viewport-screen-device-width</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #box {
+            width: 100%;
+            background-color: #eee;
+        }
+        #log {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">这个元素(div#box)宽度为 100%</div>
+    <p><a href="viewport-screen-device-width.html">不设置meta viewport</a></p>
+    <p><button id="refresh">刷新数据</button></p>
+    <div id="log"></div>
+    <script>
+        function log(o) {
+            var el = document.getElementById('log'),
+                p = document.createElement('p');
+
+            p.innerHTML = o.toString ? o.toString() : o;
+            el.appendChild(p);
+        }
+
+        function outputData() {
+            var el = document.getElementById('log');
+            el.innerHTML = '';
+            log('screen.width: ' + screen.width);
+            log('window.outerWidth: ' + window.outerWidth);
+            log('window.innerWidth: ' + window.innerWidth);
+            log('document.documentElement.clientWidth: ' + 
+                    document.documentElement.clientWidth);
+
+            var box = document.getElementById('box');
+            log('div#box width: ' + box.offsetWidth);
+
+            log('window.devicePixelRatio: ' + window.devicePixelRatio);
+        }
+        outputData();
+
+        var refresh = document.getElementById('refresh');
+        refresh.onclick = outputData;
+    </script>
+</body>
+</html>

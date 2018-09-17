@@ -1,0 +1,44 @@
+@import "~normalize.css/normalize.css";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 14px/1.7 Helvetica, Tahoma, "MiscroSoft Yahei", sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #066d63;
+  -webkit-transition: .2s;
+          transition: .2s;
+}
+
+a:hover,
+a:active {
+  color: #ff5e1f;
+}
+
+
+.copyright {
+  text-align: center;
+}

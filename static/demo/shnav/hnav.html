@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>水平导航栏</title>
+    <style type="text/css">
+        
+        #mainnav {
+            list-style:none;
+            margin: 0;
+            padding: 0;
+            float: left;  /* 使无序列表框包裹住浮动的列表项 */
+            background-color: #eee;  
+        }
+        
+        #mainnav li {
+            float: left;
+        }
+        
+        #mainnav li a {
+            font: 20px/30px Arial, Verdana, sans-serif;
+            display: block;
+            text-decoration: none;
+            color: #404040;
+            padding: 5px 20px;
+            border-left: 1px solid #bbb;
+        }
+        
+        #mainnav .firstChild a{
+            border-left: none;
+        }
+        
+        #mainnav li a:hover,
+        #mainnav li a:focus {  /* :focus伪类使键盘操作获得鼠标悬停效果 */
+            color: #fdfdfd;
+            background-color: #4cc;
+        }
+    </style>
+</head>
+<body>
+	<ul id="mainnav">
+		<li class="firstChild"><a href="#">Home</a></li>
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">Our Clients</a></li>
+		<li><a href="#">Support</a></li>
+		<li><a href="#">Contact Us</a></li>
+	</ul>
+</body>
+</html>
