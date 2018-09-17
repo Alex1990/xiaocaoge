@@ -34,11 +34,11 @@ tags:
 
 该接口扩展了 [PerformanceEntry](https://www.w3.org/TR/performance-timeline-2/#performanceentry) 接口属性。例如下图展示了 Chrome 58 所支持的属性：
 
-{% asset_img "PerformanceResourceTiming-attributes.png" "PerformanceResourceTiming 接口属性" %}
+[![PerformanceResourceTiming 接口属性](/images/browser-request-performance-collect/PerformanceResourceTiming-attributes.png)](/images/browser-request-performance-collect/PerformanceResourceTiming-attributes.png)
 
 各属性的含义还是比较直观的，下图展示一个请求周期各阶段的划分：
 
-{% asset_img "resource-timing.png" "Resource Timing 请求阶段划分" %}
+[![Resource Timing 请求阶段划分](/images/browser-request-performance-collect/resource-timing.png)](/images/browser-request-performance-collect/resource-timing.png)
 
 具体各属性的含义及属性值详见规范中的[解释](https://w3c.github.io/resource-timing/#performanceresourcetiming)。
 
