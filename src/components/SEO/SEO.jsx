@@ -29,6 +29,7 @@ class SEO extends Component {
         {/* General tags */}
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <link rel="icon" type="image/png" href="/favicon/favicon.png" />
       </Helmet>
     );
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import moment from "moment";
 import Layout from "../layout";
-import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
@@ -29,11 +29,13 @@ export default class PostTemplate extends React.Component {
         <div className="wrapper">
           <div className="post-entry">
             <h1 className="post-title">{post.title}</h1>
+            <div className="post-meta">
+              <time datetime={post.date}>{moment(post.date).format('YYYY-MM-DD HH:mm')}</time>
+            </div>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
               <PostTags tags={post.tags} />
             </div>
-            <Disqus postNode={postNode} />
           </div>
         </div>
       </Layout>
