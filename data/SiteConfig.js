@@ -8,7 +8,7 @@ module.exports = {
   siteDescription: "记录前端技术，如 HTML、CSS、JavaScript、React，也记录生活", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
-  googleAnalyticsID: "", // GA tracking ID.
+  googleAnalyticsID: "UA-49539922-1", // GA tracking ID.
   disqusShortname: "xiaocaoge", // Disqus shortname.
   postDefaultCategoryID: "其他", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
