@@ -21,13 +21,13 @@ tags:
 
 相加色是指通过混合不同颜色的光产生的颜色。在加色系统中，红（Red）、绿（Green）、蓝（Blue）是最常见的三原色。
 
-![红、绿、蓝光三原色](https://cdn.rawgit.com/Alex1990/xiaocaoge/gh-pages/images/color-fundamental/additive-color.svg)
+![红、绿、蓝光三原色](/images/color-fundamental/additive-color.svg)
 
 ### 相减色 Subtractive color
 
 相减色是通过混合不同的染料、墨水、色素或其他染色剂得到的颜色，其原理是某种颜色的颜料吸收了一些波长的光，剩下未吸收的波长的光组合成的颜色即为该颜料的颜色。在减色系统中，青（Cyan）、品红（Magenta）和黄（Yellow）是常见的三原色。
 
-![青、品红、黄颜料三原色](https://cdn.rawgit.com/Alex1990/xiaocaoge/gh-pages/images/color-fundamental/subtractive-color.svg)
+![青、品红、黄颜料三原色](/images/color-fundamental/subtractive-color.svg)
 
 ### 次生色 Secondary color
 
@@ -37,19 +37,19 @@ tags:
 
 RGB 颜色模型的次生色为：青、品红、黄。
 
-![加色法次生色](https://cdn.rawgit.com/Alex1990/xiaocaoge/gh-pages/images/color-fundamental/secondary-additive-color.svg)
+![加色法次生色](/images/color-fundamental/secondary-additive-color.svg)
 
 #### 减色法次生色 Subtractive secondary color
 
 CMYK 颜色模型的次生色为：红、绿、蓝。
 
-![减色法次生色](https://cdn.rawgit.com/Alex1990/xiaocaoge/gh-pages/images/color-fundamental/secondary-subtractive-color.svg)
+![减色法次生色](/images/color-fundamental/secondary-subtractive-color.svg)
 
 ### 色环 Color wheel
 
 色环是指围绕一个圆环的一组颜色的展示方式，可以用来表示原色、次生色、三次色之间的关系。
 
-![十二色环](https://cdn.rawgit.com/Alex1990/xiaocaoge/gh-pages/images/color-fundamental/color-wheel.svg)
+![十二色环](/images/color-fundamental/color-wheel.svg)
 
 ### 像素 Pixel
 
