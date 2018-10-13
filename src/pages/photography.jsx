@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Layout from "../layout";
-import Photograpy from "../components/Photograpy/Photograpy";
+import Photography from "../components/Photography/Photography";
 import config from "../../data/SiteConfig";
 
-class PhotograpyPage extends Component {
+class PhotographyPage extends Component {
   render() {
     return (
       <Layout location={this.props.location}>
         <div className="photography-container">
-          <Helmet title={`Photograpy | ${config.siteTitle}`} />
+          <Helmet title={`Photography | ${config.siteTitle}`} />
           <div className="wrapper">
-            <Photograpy />
+            <Photography />
           </div>
         </div>
       </Layout>
@@ -19,4 +19,4 @@ class PhotograpyPage extends Component {
   }
 }
 
-export default PhotograpyPage;
+export default PhotographyPage;
