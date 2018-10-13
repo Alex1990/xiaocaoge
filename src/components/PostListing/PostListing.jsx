@@ -32,7 +32,7 @@ class PostListing extends React.Component {
               </Link>
             </h1>
             <div className="post-meta">
-              <time datetime={post.date}>{moment(post.date).format('YYYY-MM-DD HH:mm')}</time>
+              <time dateTime={post.date}>{moment(post.date).format('YYYY-MM-DD HH:mm')}</time>
             </div>
           </article>
         ))}

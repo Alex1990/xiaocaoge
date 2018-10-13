@@ -38,6 +38,9 @@ a:active {
   color: #ff5e1f;
 }
 
+.main {
+  margin-top: 48px;
+}
 
 .copyright {
   text-align: center;

@@ -3,6 +3,7 @@
   "description": "My blog",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "next",
     "gatsby-image": "next",
     "gatsby-plugin-catch-links": "next",
