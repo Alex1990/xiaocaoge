@@ -47,7 +47,7 @@ class Header extends Component {
                   <Link to="/photography">Photography</Link>
                 </li>
                 <li>
-                  <Link to="/open-souce">Open Source</Link>
+                  <Link to="/openSource">Open Source</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>

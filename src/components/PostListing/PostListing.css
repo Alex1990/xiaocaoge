@@ -2,3 +2,23 @@
   font-weight: 400;
   font-size: 20px;
 }
+
+.post-list .year-label {
+  margin: 2rem 0 0;
+  font-family: serif;
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+@media (min-width: 768px) {
+  .post-list article {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    border-bottom: 1px dotted #aaa;
+  }
+
+  .post-list article h1 {
+    margin-bottom: 0;
+  }
+}

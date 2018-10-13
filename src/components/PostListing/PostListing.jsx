@@ -21,21 +21,36 @@ class PostListing extends React.Component {
   }
   render() {
     const postList = this.getPostList();
+    let year;
+
     return (
       <div className="wrapper post-list">
         {/* Your post list here. */
-        postList.map((post, index) => (
-          <article key={index}>
-            <h1>
-              <Link to={post.path} key={post.title}>
-                {post.title}
-              </Link>
-            </h1>
-            <div className="post-meta">
-              <time dateTime={post.date}>{moment(post.date).format('YYYY-MM-DD HH:mm')}</time>
-            </div>
-          </article>
-        ))}
+        postList.map((post, index) => {
+          const postYear = moment(post.date).year();
+          const article = (
+            <article key={index}>
+              <h1>
+                <Link to={post.path} key={post.title}>
+                  {post.title}
+                </Link>
+              </h1>
+              <div className="post-meta">
+                <time dateTime={post.date}>{moment(post.date).format('YYYY-MM-DD')}</time>
+              </div>
+            </article>
+          );
+          if (year !== postYear) {
+            year = postYear;
+            return (
+              <React.Fragment key={index}>
+                <div className="year-label">&#8727; {postYear} &#8727;</div>
+                {article}
+              </React.Fragment>
+            );
+          }
+          return article;
+        })}
       </div>
     );
   }
