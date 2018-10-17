@@ -25,6 +25,7 @@
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
+    "jsonp": "^0.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.22.2",
     "normalize.css": "^8.0.0",

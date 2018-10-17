@@ -27,7 +27,7 @@ class Header extends Component {
         <div className="header-wrapper">
           <div className="logo">
             <Link to="/">
-              <img src={config.siteLogo} alt="Site logo" />
+              <img src={config.siteLogo} alt="Site logo" title={config.siteTitle}/>
             </Link>
           </div>
           <div className="nav-container">
