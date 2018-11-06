@@ -30,7 +30,7 @@ export default class PostTemplate extends React.Component {
           <div className="post-entry">
             <h1 className="post-title">{post.title}</h1>
             <div className="post-meta">
-              <time datetime={post.date}>{moment(post.date).format('YYYY-MM-DD')}</time>
+              <time dateTime={post.date}>{moment(post.date).format('YYYY-MM-DD')}</time>
             </div>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
