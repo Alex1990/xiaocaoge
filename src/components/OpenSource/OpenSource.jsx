@@ -8,6 +8,11 @@ class OpenSource extends Component {
         <h1>
           开源项目
         </h1>
+        <ul>
+          <li>
+            <a href="https://github.com/Alex1990/tiny-cookie">tiny-cookie</a>: A tiny cookie manipulation plugin for the browser.
+          </li>
+        </ul>
       </div>
     );
   }
