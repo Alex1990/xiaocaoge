@@ -1,6 +1,11 @@
 .post-list h1 {
+  margin-bottom: 0;
   font-weight: 400;
   font-size: 20px;
+}
+
+.post-list .post-meta {
+  margin-top: .25em;
 }
 
 .post-list .year-label {
@@ -14,11 +19,11 @@
   .post-list article {
     display: flex;
     justify-content: space-between;
-    align-items: top;
+    align-items: flex-end;
     border-bottom: 1px dotted #aaa;
   }
 
-  .post-list article h1 {
-    margin-bottom: 0;
+  .post-list .post-meta {
+    margin-top: 0;
   }
 }
