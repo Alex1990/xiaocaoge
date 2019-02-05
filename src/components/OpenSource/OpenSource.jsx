@@ -12,6 +12,9 @@ class OpenSource extends Component {
           <li>
             <a href="https://github.com/Alex1990/tiny-cookie">tiny-cookie</a>: A tiny cookie manipulation plugin for the browser.
           </li>
+          <li>
+            <a href="https://github.com/Alex1990/autoresize-textarea">autoresize-textarea</a>: A jQuery (optional) plugin can automatically resize the textarea's height.
+          </li>
         </ul>
       </div>
     );
