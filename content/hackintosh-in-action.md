@@ -62,3 +62,7 @@ tonymacx86.com 网站每过一段时间都会发布一个推荐配置列表，�
 - 终于 Mac 可以使用上了 GTX 1070 这样强大的显卡，如果是 iMac 之类的得花费不低于 2 万才能达到相同的配置。
 
 缺点就是耗电、噪音大，以及不像笔记本轻便。然而，笔记本并不总是体现出轻便的优势，实际生活中，家里使用的笔记本多长时间换一次位置呢，至少我只有搬家时候才会移动。像节假日回家或旅行时，可以带工作配的 Mac 笔记本就行。所以，我唯一遗憾的是为什么不早点儿配一台这样性能强大的台式机呢。
+
+## 后续
+
+- **2019-02-04** 从 macOS High Sierra 10.13.3 升级到 10.13.6，从 Boot Install From Sierra 启动后（记得按空格键，选择 verbose 选项），卡在 kextd stall AppleACPICPU。下载 FakeSMC.text 放入 /Volumes/EFI/EFI/Clover/Kexts/Other 目录当中解决了
