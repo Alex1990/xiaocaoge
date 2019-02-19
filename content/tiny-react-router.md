@@ -151,7 +151,7 @@ class Home extends React.Component {
     // 更新 URL
     this.props.history.push(
       this.linkRef.current.getAttribute('href'),
-      this.props.changeLocation(),
+      this.props.changeLocation,
     );
   }
 
@@ -177,7 +177,7 @@ class About extends React.Component {
 
   handleClick = () => {
     // 更新 URL
-    this.props.history.push('/', this.props.changeLocation());
+    this.props.history.push('/', this.props.changeLocation);
   }
 
   render() {
