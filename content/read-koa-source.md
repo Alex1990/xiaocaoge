@@ -6,14 +6,15 @@ category: "Node.js"
 tags:
   - 源码
   - Koa
+  - HTTP
 ---
 
-Koa 号称为 Node.js 的下一代 Web 框架。从多年以前的 Express 一枝独秀来看，确实如此，相比 Express 的函数回调写法，使用异步函数（或生成器函数）逻辑更符合人的思维防止，也避免回调嵌套。另外，虽然叫“框架”，但是与其他语言大而全的框架明显不同，Koa 相当轻量，大概提供了两个核心功能：
+Koa 号称为 Node.js 的下一代 Web 框架。从多年以前的 Express 一枝独秀来看，确实如此，相比 Express 的函数回调写法，使用异步函数（或生成器函数）逻辑更符合人的思维，也避免回调嵌套。另外，虽然叫“框架”，但是与其他语言大而全的框架明显不同，Koa 相当轻量，大概提供了两个核心功能：
 
 * 简化 HTTP 请求行、状态行、请求与响应头部处理
 * 中间件机制，处理与控制数据流
 
-其他 Web 开发常用的模块都需要通过中间件方式来实现，比如请求内容解析、路由、缓存、压缩等，当然数据库的访问也需要单独的包来实现。
+其他 Web 开发常用的模块都需要通过中间件方式来实现，比如请求内容解析、路由、缓存、压缩等，当然数据库的访问也需要单独的包。
 
 ## 一个简单的 HTTP Server
 
@@ -42,7 +43,7 @@ Koa 的核心之一是简化了我们对 HTTP 请求与响应的访问与操作�
 * HTTP 头部获取与设置
 * HTTP 响应内容设置
 
-而上面的所有事情都是围绕 hello world 示例当中`req`和`res`两个对象。当然，Koa 当中的中间件（Middleware）也并不神奇，就是函数的层层调用，只不过每个函数都可以选择是否调用下一层函数，具体实现细节下面再讲。
+而上面的所有事情都是围绕 hello world 示例当中`req`和`res`两个对象。另外，Koa 当中的中间件（Middleware）也并不神奇，就是函数的层层调用，只不过每个函数都可以选择是否调用下一层函数，具体实现细节下面再讲。
 
 
 ## Koa 当中用到的一些 JavaScript 语法
@@ -50,7 +51,7 @@ Koa 的核心之一是简化了我们对 HTTP 请求与响应的访问与操作�
 如果对下面几个语法不太熟悉，可以查看链接相关内容。
 
 * 对象 [getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) 和 [setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)。
-* 原型继承的实现之一 [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)。
+* 原型继承的使用方式之一 [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)。
 * 异步处理 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 与[异步函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)。
 
 ## 核心模块
@@ -87,7 +88,7 @@ response 模块主要是对 HTTP 响应信息获取与设置方法封装：
 
 ### context
 
-koa middleware 是一个函数，其第一个参数为 context 对象，context 模块定义了一个 context 原型对象，其上面挂载 request 与 response 对象，另外通过 [delegates](https://www.npmjs.com/package/delegates) 模块将 request 与 response 对象上面的方法代理到了 context 对象上面，便于使用。
+Koa 的 middleware 是一个函数，其第一个参数为 context 对象，context 模块定义了一个 context 原型对象，其上面挂载 request 与 response 对象，另外通过 [delegates](https://www.npmjs.com/package/delegates) 模块将 request 与 response 对象上面的方法代理到了 context 对象上面，便于使用。
 
 除了代理 request 与 response 对象方法，也提供了一些错误处理、异常响应、Cookie 处理等方法。
 
