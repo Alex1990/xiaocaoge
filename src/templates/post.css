@@ -1,7 +1,10 @@
 .post-entry {
-  margin-top: 48px;
   color: #333;
 }
+.post-entry .post-title {
+  margin: 1em 0;
+}
+
 
 .post-entry h1,
 .post-entry h2,
