@@ -26,7 +26,7 @@
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "^2.2.14",
     "jsonp": "^0.2.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.23.0",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.15.0",
