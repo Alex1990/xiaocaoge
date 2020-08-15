@@ -41,16 +41,16 @@ class Header extends Component {
             <nav className="nav">
               <ul>
                 <li>
-                  <Link to="/">Blog</Link>
+                  <Link to="/">文章</Link>
                 </li>
                 <li>
-                  <Link to="/photography">Photography</Link>
+                  <Link to="/openSource">开源</Link>
                 </li>
                 <li>
-                  <Link to="/openSource">Open Source</Link>
+                  <a href="https://onetool.net" target="_blank" rel="noopener noreferrer">在线小工具</a>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about">关于</Link>
                 </li>
               </ul>
             </nav>
