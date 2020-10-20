@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Vertical Align</title>
+    <style type="text/css">
+    body,h2,h3,p,div,img,strong {
+        margin:0;
+        padding:0;
+    }
+    body {
+        font:14px/1.6 Arial, sans-serif;
+    }
+    #container {
+        width:1024px;
+        margin: 0 auto;
+    }
+    h2 {
+        font-family:Arial, sans-serif;
+        margin:50px 0 10px;
+        color:#e64;
+    }
+    h3 {
+        margin: 20px 0 5px;
+        color:#444;
+    }
+    p {
+        margin:5px 0 10px;
+        color:#aaa;
+    }
+    .parent {
+        background:#e0e0e0;
+    }
+    .child {
+        background:#e64;
+    }
+    
+    .line-height .single-text .child {
+        width:100px;
+        line-height:50px;
+    }
+    .line-height .image .child {
+        line-height:300px;
+    }
+    .line-height .image img {
+        width:200px;
+        vertical-align:middle;
+    }
+    .line-height .div .parent {
+        line-height:100px;
+    }
+    .line-height .div .child {
+        display:inline-block;
+        width:30px;
+        line-height:1.6;
+        vertical-align:middle;
+    }
+    
+    .table-cell .single-text .parent {
+        display:table;
+    }
+    .table-cell .single-text .child {
+        display: table-cell;
+        height:50px;
+        vertical-align:middle;
+    }
+    .table-cell .image img {
+        width:200px;
+    }
+    .table-cell .image .parent {
+        display: table;
+    }
+    .table-cell .image .child {
+        display: table-cell;
+        height: 200px;
+        vertical-align:middle;
+    }
+    
+    .pos-margin .div .parent {
+        position:relative;
+        height:100px;
+    }
+    .pos-margin .div .child {
+        position:absolute;
+        top:50%;
+        height:50px;
+        margin-top:-25px;
+    }
+    
+    .pos-stretch .div .parent {
+        position:relative;
+        height:100px;
+    }
+    .pos-stretch .div .child {
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        height:60px;
+        margin:auto;
+    }
+    
+    .equal-padding .div .parent {
+        padding:5% 0;
+    }
+    .equal-padding .div .child {
+        height:50px;
+    }
+    </style>
+    <!--[if lte IE 6]>
+    <style type="text/css">
+        .table-cell .image .child {
+            display:inline-block;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+	<div id="container">
+        <div class="line-height">
+            <h2>Line-Height Method</h2>
+            <div class="single-text">
+                <h3>Single Text</h3>
+                <p><strong>Compatibility: </strong>IE6-8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                    <div class="child">Text here</div>
+                </div>
+            </div>
+            <div class="image">
+                <h3>Single Line Image</h3>
+                <p><strong>Compatibility: </strong>IE7-8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                    <div class="child">
+                        a<img src="images/1024.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="div">
+                <h3>Inline/Inline-Block DIV</h3>
+                <p><strong>Compatibility: </strong>IE8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                	<div class="child">Div here</div>
+                </div>
+            </div>
+        </div>
+        <div class="table-cell">
+            <h2>CSS Table Method</h2>
+            <div class="single-text">
+                <h3>Single Text</h3>
+                <p><strong>Compatibility: </strong>IE8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                    <div class="child">Text here</div>
+                </div>
+            </div>
+            <div class="image">
+                <h3>Single Line Image</h3>
+                <p><strong>Compatibility: </strong>IE8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                    <div class="child">
+                        <img src="images/1024.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pos-margin">
+            <h2>Absolute Positioning and Negative Margin</h2>
+            <div class="div">
+                <h3>Div</h3>
+                <p><strong>Compatibility: </strong>IE6-8,Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Known</p>
+                <div class="parent">
+                    <div class="child">Div here</div>
+                </div>
+            </div>
+        </div>
+        <div class="pos-stretch">
+            <h2>Absolute Positioning and Stretching</h2>
+            <div class="div">
+                <h3>Div</h3>
+                <p><strong>Compatibility: </strong>IE8, Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Unknown</p>
+                <div class="parent">
+                    <div class="child">Div here</div>
+                </div>
+            </div>
+        </div>
+        <div class="equal-padding">
+            <h2>Equal Top and Bottom Padding/Margin</h2>
+            <div class="div">
+                <h3>Div</h3>
+                <p><strong>Compatibility: </strong>IE6-8,Ch, FF, Op, SF</p>
+                <p><strong>Content Text/Div Height: </strong>Known</p>
+                <div class="parent">
+                    <div class="child">Div here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

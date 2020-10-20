@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Slideshow</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+    #slideshow {
+        position: relative;
+        width: 512px;
+        height: 384px;
+        overflow: hidden;
+    }
+    #slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 512px;
+        z-index:1;
+    }
+    #slideshow img.active {
+        z-index: 3;
+    }
+    #slideshow img.last-active {
+        z-index: 2;
+    }
+    #slide-list {
+        /* 前三项可在reset.css中设置 */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        z-index: 4;
+    }
+    #slide-list li {
+        float: left;
+        display: inline-block;
+        margin: 0 3px;
+        padding: 3px;
+        width: 1em;
+        font: 16px/1 Arial, sans-serif;
+        text-align: center;
+        vertical-align: baseline;
+        color: #fff;
+        background: #555;
+        cursor: pointer;
+    }
+    #slide-list li:hover,
+    #slide-list li.hover {
+        background: #888;
+    }
+    </style>
+</head>
+<body>
+<div id="slideshow">
+    <ul id="slide-list">
+        <li id="0">1</li>
+        <li id="1">2</li>
+        <li id="2">3</li>
+    </ul>
+    <span class="prev">Prev</span>
+    <span class="next">Next</span>
+    <img src="images/1.jpg" alt="" class="active" />
+    <img src="images/2.jpg" alt="" />
+    <img src="images/3.jpg" alt="" />
+</div>
+    
+<script type="text/javascript">
+function slideSwitch(){
+    var $active = $('#slideshow img.active');
+    
+    var $next = $active.next().length ? $active.next() : 
+            $('#slideshow img:first');
+    
+    $active.addClass('last-active');
+    
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function(){
+            $('#slide-list li').eq($next.index('#slideshow img'))
+                .addClass('hover')
+                .siblings().removeClass('hover');
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function(){
+    var clear = setInterval(slideSwitch, 3000);
+    
+    $('#slideshow img').hover(
+        function(){
+            clearInterval(clear);
+        },
+        function(){
+            clear = setInterval(slideSwitch, 3000);
+        });
+    
+    
+    $('#slide-list li').hover(
+        function(){
+            clearInterval(clear);
+            $(this).addClass('hover');
+            $('#slideshow img').eq($(this).attr('id'))
+                .addClass('active last-active')
+                .siblings().removeClass('active last-active');
+        },
+        function(){
+            $(this).removeClass('hover');
+            clear = setInterval(slideSwitch, 3000);
+        });
+});
+</script>
+</body>
+</html>

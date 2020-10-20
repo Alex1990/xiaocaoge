@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Form</title>
+    <style type="text/css">
+    form {
+        font-family:Arial;
+        font-size:14px;
+        width:600px;
+    }
+    fieldset {
+        border:1px solid #ccc;
+        margin-bottom:10px;
+    }
+    fieldset.login input {
+        width:125px;
+    }
+    legend {
+        font-weight:bold;
+        font-size:1.1em;
+    }
+    label {
+        display:block;
+        width:60px;
+        text-align:right;
+        float:left;
+        padding-right:10px;
+        margin:5px 0;
+    }
+    input {
+        margin:5px 0;
+    }
+    input.text {
+        padding:0 0 0 3px;
+        width:172px;
+    }
+    input.submit {
+        margin:15px 0 0 70px;
+    }
+    ul.errors {
+        display:inline-block;
+        list-style:none;
+        background:#ffcece;
+        padding:3px;
+        margin:3px 0 3px 70px;
+        font-size:0.9em;
+        width:165px;
+    }
+    </style>
+</head>
+<body>
+<h1>Simple Form</h1>
+<form action="" method="post">
+    <fieldset class="login">
+    	<legend>Login Information</legend>
+    	<label for="username" class="hover">Username</label>
+    	<input type="text" id="username" class="required text" /><br />
+    	<label for="password" class="hover">Password</label>
+    	<input type="password" id="password" class="required text" />
+    </fieldset>
+    <fieldset>
+    	<legend>Personal Information</legend>
+    	<label for="name">Name</label>
+    	<input type="text" id="name" class="required text" /><br />
+    	<label for="email">Email</label>
+    	<input type="text" id="email" class="required email text" /><br />
+    	<label for="date">Date</label>
+    	<input type="text" id="date" class="required date text" /><br />
+    	<label for="url">Website</label>
+    	<input type="text" id="url" class="url text" /><br />
+    	<label for="phone">Phone</label>
+    	<input type="text" id="phone" class="phone text" /><br />
+    	<label for="age">Over 13?</label>
+    	<input type="checkbox" id="age" class="required" name="age" value="yes"
+        /><br />
+        
+    	<input type="submit" class="submit" value="Submit Form" />
+    </fieldset>
+</form>
+<script type="text/javascript" src="script/formValidation.js"></script>
+</body>
+</html>

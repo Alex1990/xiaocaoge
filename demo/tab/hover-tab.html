@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Hover tab</title>
+    <style type="text/css">
+        body,div,h1,h2,p,
+        ul,li,strong {
+            margin:0;
+            padding:0;
+        }
+        body {
+            font:16px/1.6 Arial, 微软雅黑, 黑体, sans-serif;
+        }
+        ul {
+            list-style:none;
+        }
+        .cf:after {
+            content:'';
+            height:0;
+            visibility:hidden;
+            display:block;
+            clear:both;
+        }
+        .cf {
+            zoom:1; /* IE6-7 hasLayout */
+        }
+        
+        .container {
+            width:960px;
+            margin:0 auto;
+        }
+        h1,h2,p {
+            margin:10px 0;
+        }
+        h2 {
+            color:#777;
+        }
+        img {
+            width:50px;
+        }
+        .tab1 {
+            position:relative;
+            width:256px;
+            height:300px;
+            background:#555;
+        }
+        .tab1 li {
+            float:left;
+        }
+        .tab1 .on .tab-title {
+            background:#777;
+        }
+        .tab1 .on .tab-body {
+            display:block;
+        }
+        .tab1 .tab-title {
+            width:50px;
+            padding:0 10px;
+            line-height:24px;
+            color:#fff;
+            cursor:pointer;
+        }
+        .tab1 .tab-body {
+            display:none;
+            position:absolute;
+            top:24px;
+            left:0;
+            padding:10px;
+            width:234px;
+            border:1px solid #555;
+            border-top:none;
+            background:#fff;
+        }
+        .tab1 .first .tab-body {
+            display:block;
+        }
+        .tab1 .tab-body li {
+            float:none;
+        }
+        
+        /* tab2 */
+        .tab2 .tab-title {
+            width:256px;
+            background:#555;
+        }
+        .tab2 .tab-title li {
+            float:left;
+            width:50px;
+            padding:0 10px;
+            text-decoration:none;
+            color:#fff;
+            cursor:pointer;
+        }
+        .tab2 .tab-title .on {
+            background:#777;
+        }
+        .tab2 .tab-body {
+            padding:10px;
+            width:234px;
+            border:1px solid #555;
+            border-top:none;
+            display:none;
+        }
+        .tab2 div .on {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+        <h1>Hover tab</h1>
+        <p><strong>Compatibility:</strong>IE6+,Ch,FF,SF,Op</p>
+        <h2>HTML结构1</h2>
+        <img src="images/inclusion.jpg" alt="" />
+        <div class="tab1">
+            <ul class="cf">
+            	<li class="tab-item first on"><div class="tab-title">在读</div>
+                    <div class="tab-body">
+                        <ul>
+                        	<li>JavaScript语言精粹</li>
+                        	<li>JavaScript高级程序设计</li>
+                        	<li>计算机科学概论</li>
+                        	<li>Pro Git</li>
+                        </ul>
+                    </div>
+                </li>
+            	<li class="tab-item"><div class="tab-title">读过</div>
+                    <div class="tab-body">
+                        <ul>
+                        	<li>精通CSS</li>
+                        	<li>精通JavaScript</li>
+                        	<li>超越CSS</li>
+                        	<li>CSS网站布局实录</li>
+                        	<li>PHP6和MySQL5基础教程</li>
+                        </ul>
+                    </div>
+                </li>
+            	<li class="tab-item"><div class="tab-title">想读</div>
+                    <div class="tab-body">
+                        <ul>
+                        	<li>JavaScript DOM高级程序设计</li>
+                        	<li>高性能JavaScript</li>
+                        	<li>JavaScript MVC</li>
+                        	<li>PHP和MySQL程序设计</li>
+                        	<li>CSS禅意花园</li>
+                        	<li>Practical Vim</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div>Other content</div>
+        </div>
+        <h2>HTML结构2</h2>
+        <img src="images/separation.jpg" alt="" />
+        <div class="tab2">
+            <ul class="tab-title cf">
+                <li id="item-0" class="on">在读</li>
+                <li id="item-1">读过</li>
+                <li id="item-2">想读</li>
+            </ul>
+            <div>
+                <div id="tab-0" class="tab-body on">
+                    <ul>
+                        <li>JavaScript语言精粹</li>
+                        <li>JavaScript高级程序设计</li>
+                        <li>计算机科学概论</li>
+                        <li>Pro Git</li>
+                    </ul>
+                </div>
+                <div id="tab-1" class="tab-body">
+                    <ul>
+                        <li>精通CSS</li>
+                        <li>精通JavaScript</li>
+                        <li>超越CSS</li>
+                        <li>CSS网站布局实录</li>
+                        <li>PHP6和MySQL5基础教程</li>
+                    </ul>
+                </div>
+                <div id="tab-2" class="tab-body">
+                    <ul>
+                        <li>JavaScript DOM高级程序设计</li>
+                        <li>高性能JavaScript</li>
+                        <li>JavaScript MVC</li>
+                        <li>PHP和MySQL程序设计</li>
+                        <li>CSS禅意花园</li>
+                        <li>Practical Vim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>Other content</div>
+    </div>
+    <script type="text/javascript">
+        
+        window.onload = function(){
+            tabFunc1();
+            tabFunc2();
+        }
+        
+        function tabFunc1(){
+            var i,j,len,
+                tab1 = byClass('tab1')[0],
+                tabItem = byClass('tab-item', tab1);
+            
+            tab1.onmouseout = function(){
+                addClass(tabItem[0], 'on');
+            }
+            
+            for ( i = 0, len = tabItem.length; i < len; i++ ) {
+                tabItem[i].onmouseover = function(){
+                    for ( j = 0; j < len; j++ ) {
+                        removeClass(tabItem[j], "on");
+                    }
+                    addClass(this, 'on');
+                };
+                tabItem[i].onmouseout = function(){
+                    for ( j = 0; j < len; j++ ) {
+                        removeClass(tabItem[j], "on");
+                    }
+                    removeClass(this, 'on');
+                };
+            }
+        }
+        
+        function tabFunc2(){
+            var i,j,len,
+                tab2 = byClass('tab2')[0],
+                tabTitle = byClass('tab-title', tab2)[0].getElementsByTagName('li'),
+                tabBody = byClass('tab-body', tab2);
+            
+            tab2.onmouseout = function(){
+                addClass(tabTitle[0], 'on');
+                addClass(tabBody[0], 'on');
+            }
+            
+            for ( i = 0, len = tabTitle.length; i < len; i++ ) {
+                tabTitle[i].onmouseover = function(){
+                    for ( j = 0, len = tabTitle.length; j < len; j++ ) {
+                        removeClass(tabTitle[j], 'on');
+                        removeClass(tabBody[j], 'on');
+                    }
+                    addClass(this, 'on');
+                    addClass(id('tab-' + this.id.substr(5)), 'on');
+                };
+                tabTitle[i].onmouseout = function(){
+                    for ( j = 0, len = tabTitle.length; j < len; j++ ) {
+                        removeClass(tabTitle[j], 'on');
+                        removeClass(tabBody[j], 'on');
+                    }
+                    removeClass(this, 'on');
+                    removeClass(id('tab-' + this.id.substr(5)), 'on');
+                };
+            }
+        }
+        
+        function hasClass(obj, cls) {
+            return obj.className && obj.className.match(
+                    new RegExp("(^|\\s)" + cls + "(\\s|$)"));
+        }
+        
+        function addClass(obj, cls) {
+            if ( !hasClass(obj, cls) ) {
+                obj.className += " " + cls;
+            }
+        }
+        
+        function removeClass(obj, cls) {
+            if ( hasClass(obj, cls) ) {
+                var reg1 = new RegExp("(^|\\s)" + cls +"(\\s|$)"),
+                    reg2 = new RegExp("\\s" + cls + "\\s");
+                obj.className = reg2.test(obj.className) ?
+                        obj.className.replace(reg2, " ") :
+                        obj.className.replace(reg1, "");
+            }
+        }
+        
+        function toggleClass(obj, cls) {
+            if ( !hasClass(obj, cls) ) {
+                addClass(obj, cls);
+            } else {
+                removeClass(obj, cls);
+            }
+        }
+        
+        function id(name) {
+            return document.getElementById(name);
+        }
+        
+        function byClass(searchClass,node,tag) {
+            var classElements = new Array();
+            if ( node == null )
+                node = document;
+            if ( tag == null )
+                tag = '*';
+            var els = node.getElementsByTagName(tag);
+            var elsLen = els.length;
+            var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+            for (i = 0, j = 0; i < elsLen; i++) {
+                if ( pattern.test(els[i].className) ) {
+                    classElements[j] = els[i];
+                    j++;
+                }
+            }
+            return classElements;
+        }
+    </script>
+</body>
+</html>

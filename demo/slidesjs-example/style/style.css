@@ -1,0 +1,90 @@
+/*
+ * slidesjs example
+ */
+ 
+body,div,h1,img,a,ul,li {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+body {
+    font: 13px/1.6 Arial, sans-serif;
+}
+#container {
+    width: 960px;
+    margin: 0 auto;
+    background: #f0f0f0;
+}
+#container h1 {
+    padding: 20px 0 10px 5px;
+    font-size: 24px;
+    color: #d14836;
+}
+/* Prevents slides from flashing */
+#slides {
+    display: none;
+    font-size: 0;
+}
+.slidesjs-navigation {
+    display: inline-block;
+    float: left;
+    margin: 20px 3px;
+}
+.slidesjs-previous,
+.slidesjs-next {
+    width: 12px;
+    height: 18px;
+}
+.slidesjs-previous {
+    background: url(../images/btns-next-prev-png8.png) no-repeat 0 0;
+}
+.slidesjs-previous:hover {
+    background-position: 0 -18px;
+}
+.slidesjs-next {
+    width: 12px;
+    height: 18px;
+    background: url(../images/btns-next-prev-png8.png) no-repeat -13px 0;
+}
+.slidesjs-next:hover {
+    background-position: -13px -18px;
+}
+.slidesjs-play,
+.slidesjs-stop {
+    width: 17px;
+    height: 18px;
+}
+.slidesjs-play {
+    background: url(../images/btns-next-prev-png8.png) no-repeat -24px 0;
+}
+.slidesjs-play:hover {
+    background-position: -24px -18px;
+}
+.slidesjs-stop {
+    background: url(../images/btns-next-prev-png8.png) no-repeat -42px 0;
+}
+.slidesjs-stop:hover {
+    background-position: -42px -18px;
+}
+.slidesjs-pagination {
+    float: right;
+    margin: 20px 30px 20px;
+}
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 3px;
+}
+.slidesjs-pagination a {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: url(../images/pagination-png8.png) no-repeat 0 0;
+}
+.slidesjs-pagination a:hover {
+    background-position: 0 -26px;
+}
+.slidesjs-pagination .active {
+    background-position: 0 -13px;
+}
