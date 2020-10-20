@@ -63,7 +63,6 @@
 <url> <loc>https://xiaocaoge.com/repair-grub-and-some-useful-tools/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/software-and-ecosystem/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/responsive-images/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xiaocaoge.com/the-ramble-of-editor-like-app/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/sublime-text-2-settings-and-use/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tab-operations-and-shortcuts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/the-tour-of-shanghai/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -240,11 +239,9 @@
 <url> <loc>https://xiaocaoge.com/tags/responsive/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/响应式/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/响应式图片/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xiaocaoge.com/tags/编辑器/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xiaocaoge.com/tags/富文本/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xiaocaoge.com/tags/跨平台/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/sublime/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/sublime-text-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xiaocaoge.com/tags/编辑器/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/标签页/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/快捷键/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/tags/tab/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -295,7 +292,6 @@
 <url> <loc>https://xiaocaoge.com/categories/node-js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/categories/web/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/categories/网络/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xiaocaoge.com/categories/编程/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/categories/旅行/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/categories/数据结构/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xiaocaoge.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
