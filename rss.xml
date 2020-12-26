@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[小曹哥的博客]]></title><description><![CDATA[记录前端技术，如 HTML、CSS、JavaScript、React，也记录生活]]></description><link>https://xiaocaoge.com/</link><image><url>https://xiaocaoge.com//favicon/favicon.png</url><title>小曹哥的博客</title><link>https://xiaocaoge.com/</link></image><generator>GatsbyJS Material Starter</generator><lastBuildDate>Tue, 20 Oct 2020 16:10:07 GMT</lastBuildDate><atom:link href="https://xiaocaoge.com//rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Alex]]></author><copyright><![CDATA[Copyright © forever. Alex Chao]]></copyright><item><title><![CDATA[上海之行]]></title><description><![CDATA[…]]></description><link>https://xiaocaoge.com//the-tour-of-shanghai/</link><guid isPermaLink="false">https://xiaocaoge.com//the-tour-of-shanghai/</guid><category><![CDATA[旅行]]></category><category><![CDATA[上海]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sun, 18 Oct 2020 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;来到杭州已经一个多月了，但是还没有去过杭州的任何地方转过，几乎每个周末都行事情，一开始是买各种东西，然后是安装热水器、洗衣机和网线，再然后就是开始考驾照，终于上周得空就先去上海转了一下。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[小曹哥的博客]]></title><description><![CDATA[记录前端技术，如 HTML、CSS、JavaScript、React，也记录生活]]></description><link>https://xiaocaoge.com/</link><image><url>https://xiaocaoge.com//favicon/favicon.png</url><title>小曹哥的博客</title><link>https://xiaocaoge.com/</link></image><generator>GatsbyJS Material Starter</generator><lastBuildDate>Sat, 26 Dec 2020 16:29:20 GMT</lastBuildDate><atom:link href="https://xiaocaoge.com//rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Alex]]></author><copyright><![CDATA[Copyright © forever. Alex Chao]]></copyright><item><title><![CDATA[树莓派入门]]></title><description><![CDATA[多年以前有尝试树莓派的想法，然后知乎阅读过一些高赞回答，比如“「树莓派」是什么？普通人怎么玩？"、"能用树莓派干些什么有趣的事情？"、“树莓派能用来干什么?”。这些答案当中列举的作用有： 个人网站 Git 服务器 BT 下载 家庭 NAS 私有云服务 ownCloud…]]></description><link>https://xiaocaoge.com//getting-started-raspberry-pi/</link><guid isPermaLink="false">https://xiaocaoge.com//getting-started-raspberry-pi/</guid><category><![CDATA[树莓派]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Tue, 15 Dec 2020 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;多年以前有尝试树莓派的想法，然后知乎阅读过一些高赞回答，比如&lt;a href=&quot;https://www.zhihu.com/question/20859055&quot;&gt;“「树莓派」是什么？普通人怎么玩？&quot;&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/question/32163206&quot;&gt;&quot;能用树莓派干些什么有趣的事情？&quot;&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/question/22741805&quot;&gt;“树莓派能用来干什么?”&lt;/a&gt;。这些答案当中列举的作用有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;个人网站&lt;/li&gt;
+&lt;li&gt;Git 服务器&lt;/li&gt;
+&lt;li&gt;BT 下载&lt;/li&gt;
+&lt;li&gt;家庭 NAS&lt;/li&gt;
+&lt;li&gt;私有云服务 ownCloud&lt;/li&gt;
+&lt;li&gt;智能音箱&lt;/li&gt;
+&lt;li&gt;集成测试&lt;/li&gt;
+&lt;li&gt;路由器&lt;/li&gt;
+&lt;li&gt;垃圾分类检测&lt;/li&gt;
+&lt;li&gt;智能小车&lt;/li&gt;
+&lt;li&gt;无人机&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是，我基本上都用不上，或者没时间玩，或者有替代品，我希望能对工作或学习有实际的作用，并且没有其他替代品，然后就打消了尝试树莓派的想法。&lt;/p&gt;
+&lt;h2 id=&quot;购买树莓派&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E8%B4%AD%E4%B9%B0%E6%A0%91%E8%8E%93%E6%B4%BE&quot; aria-label=&quot;购买树莓派 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;购买树莓派&lt;/h2&gt;
+&lt;p&gt;直到今年生日，朋友 S 赠送了一个&lt;a href=&quot;https://union-click.jd.com/jdc?e=&amp;#x26;p=AyIGZRtZEQESDlccUxUyFgBQE14TABsFVRtrUV1KWQorAlBHU0VeBUVNR0ZbSkdETlcNVQtHRVNSUVNLXANBRA1XB14DS10cQQVYD21XHgNSHlMQBBAOVxtbJUIVXFBGDnVqclcJS1p3dHpPDFgibVQeC2UaaxUDEwVVHV8VChI3ZRtcJUN8B1waXREKIgZlG1wUCxoPUBJeFAUWAmUcWxwyxrnPzOK1YGE3ZStYJTIiB2UYa1dsEAcCSQgcBxRTBRJbEAMUAQZLWB1VQlJSElISURFUUEhrFwMTA1w%3D&quot;&gt;树莓派4B&lt;/a&gt;，有 4G 内存。然后打算玩一下的时候，发现没有 SD 卡、显示器连接线、网线，也就懒得去折腾了。&lt;/p&gt;
+&lt;p&gt;就这样，又过了半年左右，出现过好几次使用手机看网页或者视频时，因为服务器在国外所以速度很慢或根本无法观看的情况。当然，都是正常健康向上的内容，比如阅读 Swift 官方技术文档，又比如观看油管上面的教程视频，对于小众领域，油管上面的教程视频要丰富的多，应当充分利用好国内外资源。这时，我想，是时候该树莓派登场了，因为树莓派有无法替代的综合优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;成本低，只需五六百&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;7x24 小时运行，且稳定可靠&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无噪音&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自己拥有完全控制权限&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这几项的结合是其他产品无法替代的，比如云服务器可以 7x24 小时运行，但是成本高、带宽小，自己并没有完全控制权限；又比如自己日用电脑，无法 7x24 小时运行，可能有噪音，费电。&lt;/p&gt;
+&lt;p&gt;于是，我从京东购买了&lt;a href=&quot;https://union-click.jd.com/jdc?e=&amp;#x26;p=AyIGZRtZEQESDlccUxUyFQ9QGlsVBxsFUhJrUV1KWQorAlBHU0VeBUVNR0ZbSkdETlcNVQtHRVNSUVNLXANBRA1XB14DS10cQQVYD21XHgBdHloVAhcOVxxSJURiXSx%2BJA9GcFEdfQ5wamp4Bm8lV3IeC2UaaxUDEwVVHV8VChI3ZRtcJUN8B1waXREKIgZlG1wUCxoPUB1TEgATDmUcWxwyxrnPzOK1YGE3ZStYJTIiB2UYa1dsF1AGGQ5CURdXV08PEAVBBwZPCBdRGwBUSQ4SVhNTVR5rFwMTA1w%3D&quot;&gt;树莓派64GB基础配件包&lt;/a&gt;，价格 199 元，包括下面 7 个配件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type-C 接口电源&lt;/li&gt;
+&lt;li&gt;官方外壳&lt;/li&gt;
+&lt;li&gt;散热片&lt;/li&gt;
+&lt;li&gt;micro-HDMI 线&lt;/li&gt;
+&lt;li&gt;网线&lt;/li&gt;
+&lt;li&gt;64G SD 存储卡&lt;/li&gt;
+&lt;li&gt;读卡器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;安装树莓派操作系统&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85%E6%A0%91%E8%8E%93%E6%B4%BE%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&quot; aria-label=&quot;安装树莓派操作系统 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;安装树莓派操作系统&lt;/h2&gt;
+&lt;p&gt;购买的 SD 卡里面已经预装了操作系统，所以无需重复安装了，不过我还是自己安装了一遍，非常简单，从官网下载&lt;a href=&quot;https://www.raspberrypi.org/software/&quot;&gt;操作系统镜像安装工具&lt;/a&gt;即可。安装好这个工具之后，插入 SD 卡，然后可以选择要安装的操作系统以及安装树莓派操作系统的 SD 卡，点击开始即可。因为我不打算连接显示器，所以安装的是 Lite 版本。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;树莓派官网及资源下载需要开启代理，请自行解决，或者到&lt;a href=&quot;https://shumeipai.nxez.com/download&quot;&gt;树莓派实验室&lt;/a&gt;下载&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其实，&lt;a href=&quot;https://www.raspberrypi.org/documentation/&quot;&gt;树莓派官网文档&lt;/a&gt;已经包含比较详细的教程了，包括安装、配置、编程等。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ssh-远程连接&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ssh-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5&quot; aria-label=&quot;ssh 远程连接 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SSH 远程连接&lt;/h2&gt;
+&lt;p&gt;因为我不想使用树莓派连接显示器、键盘、鼠标等一堆东西，所以需要一开机就可以使用 ssh 登录上去，下面是主要步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SD 卡插入到读卡器里面，读卡器插入电脑 USB 上面，可以看到磁盘列表多了一个&lt;code class=&quot;language-text&quot;&gt;boot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在这个&lt;code class=&quot;language-text&quot;&gt;boot&lt;/code&gt;里面创建一个空文件，名称是&lt;code class=&quot;language-text&quot;&gt;ssh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后将 SD 卡插回树莓派当中，将树莓派网线接入到路由器上面，接通电源，会有红灯亮起&lt;/li&gt;
+&lt;li&gt;进入路由器后台页面，查看已连接设备列表，可以看到树莓派分配的 IP 内网 IP 地址，比如是&lt;code class=&quot;language-text&quot;&gt;192.168.0.2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后使用命令&lt;code class=&quot;language-text&quot;&gt;ssh pi@192.168.0.2&lt;/code&gt;连接，遇到询问&lt;code class=&quot;language-text&quot;&gt;yes/no&lt;/code&gt;，输入&lt;code class=&quot;language-text&quot;&gt;yes&lt;/code&gt;，默认密码是&lt;code class=&quot;language-text&quot;&gt;raspberry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果成功会出现下面输出：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;Linux raspberrypi 5.4.79-v7l+ #1373 SMP Mon Nov 23 13:27:40 GMT 2020 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Dec 26 13:38:59 2020 from 192.168.10.103
+-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+manpath: can&amp;#39;t set the locale; make sure $LC_* and $LANG are correct
+pi@raspberrypi:~ $ &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;修改默认密码&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81&quot; aria-label=&quot;修改默认密码 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;修改默认密码&lt;/h3&gt;
+&lt;p&gt;使用默认密码连接非常不安全，需要修改，经过查询得知下面命令&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 设置 root 用户密码
+sudo passwd root
+
+# 设置 pi 用户密码，直接使用下面命令报错，需要先设置 root 密码
+sudo passwd pi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;使用基于-ssh-keys-认证连接&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E5%9F%BA%E4%BA%8E-ssh-keys-%E8%AE%A4%E8%AF%81%E8%BF%9E%E6%8E%A5&quot; aria-label=&quot;使用基于 ssh keys 认证连接 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;使用基于 SSH Keys 认证连接&lt;/h3&gt;
+&lt;p&gt;每次连接输入密码很麻烦，而且也不如 SSH Keys 安全。首先检查自己电脑用户是否存在 ssh keys，即&lt;code class=&quot;language-text&quot;&gt;~/.ssh/&lt;/code&gt;目录是否有类似&lt;code class=&quot;language-text&quot;&gt;id_xxx&lt;/code&gt;和&lt;code class=&quot;language-text&quot;&gt;id_xxx.pub&lt;/code&gt;文件，如果没有，可以通过下面命令生成。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 生成基于 ed25519 算法的密钥
+ssh-keygen -t ed25519 -C &amp;quot;your_email@example.com&amp;quot;
+
+# 输出公钥内容
+cat ~/.ssh/id_ed25519.pub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;将公钥内容复制到树莓派&lt;code class=&quot;language-text&quot;&gt;~/.ssh/authorized_keys&lt;/code&gt;文件当中。&lt;/p&gt;
+&lt;p&gt;此时可以通过下面命令验证是否设置成功：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 退出
+logout
+# 连接
+ssh pi@192.168.0.2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果直接连接进入，则表示设置成功。&lt;/p&gt;
+&lt;h2 id=&quot;安装应用&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E5%AE%89%E8%A3%85%E5%BA%94%E7%94%A8&quot; aria-label=&quot;安装应用 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;安装应用&lt;/h2&gt;
+&lt;p&gt;树莓派官网操作系统是基于 Debian 的系统，使用&lt;code class=&quot;language-text&quot;&gt;apt&lt;/code&gt;工具来管理包/应用的安装。&lt;/p&gt;
+&lt;h3 id=&quot;更换国内镜像源&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90&quot; aria-label=&quot;更换国内镜像源 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;更换国内镜像源&lt;/h3&gt;
+&lt;p&gt;官网源速度比较慢，可以使用中科大镜像源：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 备份原配置文件
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+
+# 替换第一行为 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+sudo vi /etc/apt/sources.list
+
+# 替换第一行为 deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui
+sudo vi /etc/apt/sources.list.d/raspi.list
+
+# 同步更新
+sudo apt-get update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Lite 版本操作系统不带&lt;code class=&quot;language-text&quot;&gt;git&lt;/code&gt;，通过下面命令安装&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo apt install git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;文件传递&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%92&quot; aria-label=&quot;文件传递 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;文件传递&lt;/h2&gt;
+&lt;p&gt;把电脑文件传到树莓派上或者反过来的需求是比较常见的，方式和工具也有很多，比如 SFTP 和 rsync：&lt;/p&gt;
+&lt;h3 id=&quot;sftp&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sftp&quot; aria-label=&quot;sftp permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SFTP&lt;/h3&gt;
+&lt;p&gt;因为前面已经配置好了 SSH Keys，所以可以通过下面命令直接连接树莓派：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sftp pi@192.168.0.2
+# 连接成功
+Connected to 192.168.0.2.
+# 输入 help 可以查看帮助
+sftp&amp;gt; help&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;树莓派系统默认已启动 SFTP 服务，而我使用的 macOS 也自带 SFTP 命令（客户端），所以无需额外安装任何东西，直接连接即可。&lt;/p&gt;
+&lt;h3 id=&quot;rsync&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#rsync&quot; aria-label=&quot;rsync permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;rsync&lt;/h3&gt;
+&lt;p&gt;SFTP 对于多个文件，乃至整个目录的同步还不太方便，此时可以使用&lt;code class=&quot;language-text&quot;&gt;rsync&lt;/code&gt;命令，&lt;code class=&quot;language-text&quot;&gt;rsync&lt;/code&gt;命令非常强大，有很多参数，比如复制整个目录：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 注意 source/ 最后面的斜线，表示复制 source 目录内容到 /home/pi/destination
+# 如果不加斜线，则会复制后文件结构是 /home/pi/destination/source
+rsync -av source/ pi@192.168.10.102:/home/pi/destination&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;相关链接&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5&quot; aria-label=&quot;相关链接 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;相关链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://shumeipai.nxez.com/&quot;&gt;（国内）树莓派实验室&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org&quot;&gt;树莓派官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/&quot;&gt;树莓派官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/software/&quot;&gt;安装工具下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/software/operating-systems/&quot;&gt;操作系统下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/&quot;&gt;远程连接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md&quot;&gt;使用 SSH Keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/configuration/&quot;&gt;配置系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md&quot;&gt;配置 WiFi 连接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/configuration/security.md&quot;&gt;安全性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_43336281/article/details/97373288&quot;&gt;树莓派更换国内源&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/documentation/remote-access/ssh/sftp.md&quot;&gt;文件同步 SFTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2020/08/rsync.html&quot;&gt;rsync 用法教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[上海之行]]></title><description><![CDATA[…]]></description><link>https://xiaocaoge.com//the-tour-of-shanghai/</link><guid isPermaLink="false">https://xiaocaoge.com//the-tour-of-shanghai/</guid><category><![CDATA[旅行]]></category><category><![CDATA[上海]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sun, 18 Oct 2020 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;来到杭州已经一个多月了，但是还没有去过杭州的任何地方转过，几乎每个周末都行事情，一开始是买各种东西，然后是安装热水器、洗衣机和网线，再然后就是开始考驾照，终于上周得空就先去上海转了一下。&lt;/p&gt;
 &lt;p&gt;周六下午从杭州出发，然后周日晚上返回，总共一天多时间，所以只能挑两三个地方转一下，上海外滩是必须要见识一下的，而且要看夜景，所以其他地方基本就是上海外滩附近了，旅行网站的推荐是老城隍庙、南京路步行街、豫园。我自己只有一个人，也没有逛街的习惯，所以南京路步行街先排除了，豫园和老城隍庙可以转一下。另外，上海外滩算市中心了，附近有很多科技馆、博物馆、美术馆可以参观，上海外滩对面就是宇宙中心陆家嘴了，最著名的建筑就是东方明珠电视塔了，另外还有很多高楼大厦，很繁华。&lt;/p&gt;
 &lt;h2 id=&quot;行程安排&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E8%A1%8C%E7%A8%8B%E5%AE%89%E6%8E%92&quot; aria-label=&quot;行程安排 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;行程安排&lt;/h2&gt;
 &lt;p&gt;我自己的大致行程安排是：&lt;/p&gt;
