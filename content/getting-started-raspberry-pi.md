@@ -1,7 +1,7 @@
 ---
 title: "树莓派入门"
 cover: ""
-date: "2020-12-16"
+date: "2020-12-26"
 category: "硬件"
 tags:
   - 树莓派
