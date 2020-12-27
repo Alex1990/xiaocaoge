@@ -114,58 +114,58 @@ manpath: can&#39;t set the locale; make sure $LC_* and $LANG are correct
 pi@raspberrypi:~ $ </code></pre></div>
 <h3 id="修改默认密码" style="position:relative;"><a href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81" aria-label="修改默认密码 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>修改默认密码</h3>
 <p>使用默认密码连接非常不安全，需要修改，经过查询得知下面命令</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 设置 root 用户密码
-sudo passwd root
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 设置 root 用户密码</span>
+<span class="token function">sudo</span> <span class="token function">passwd</span> root
 
-# 设置 pi 用户密码，直接使用下面命令报错，需要先设置 root 密码
-sudo passwd pi</code></pre></div>
+<span class="token comment"># 设置 pi 用户密码，直接使用下面命令报错，需要先设置 root 密码</span>
+<span class="token function">sudo</span> <span class="token function">passwd</span> pi</code></pre></div>
 <h3 id="使用基于-ssh-keys-认证连接" style="position:relative;"><a href="#%E4%BD%BF%E7%94%A8%E5%9F%BA%E4%BA%8E-ssh-keys-%E8%AE%A4%E8%AF%81%E8%BF%9E%E6%8E%A5" aria-label="使用基于 ssh keys 认证连接 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用基于 SSH Keys 认证连接</h3>
 <p>每次连接输入密码很麻烦，而且也不如 SSH Keys 安全。首先检查自己电脑用户是否存在 ssh keys，即<code class="language-text">~/.ssh/</code>目录是否有类似<code class="language-text">id_xxx</code>和<code class="language-text">id_xxx.pub</code>文件，如果没有，可以通过下面命令生成。</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 生成基于 ed25519 算法的密钥
-ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 生成基于 ed25519 算法的密钥</span>
+ssh-keygen -t ed25519 -C <span class="token string">"your_email@example.com"</span>
 
-# 输出公钥内容
-cat ~/.ssh/id_ed25519.pub</code></pre></div>
+<span class="token comment"># 输出公钥内容</span>
+<span class="token function">cat</span> ~/.ssh/id_ed25519.pub</code></pre></div>
 <p>将公钥内容复制到树莓派<code class="language-text">~/.ssh/authorized_keys</code>文件当中。</p>
 <p>此时可以通过下面命令验证是否设置成功：</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 退出
-logout
-# 连接
-ssh pi@192.168.0.2</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 退出</span>
+<span class="token builtin class-name">logout</span>
+<span class="token comment"># 连接</span>
+<span class="token function">ssh</span> pi@192.168.0.2</code></pre></div>
 <p>如果直接连接进入，则表示设置成功。</p>
 <h2 id="安装应用" style="position:relative;"><a href="#%E5%AE%89%E8%A3%85%E5%BA%94%E7%94%A8" aria-label="安装应用 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装应用</h2>
 <p>树莓派官网操作系统是基于 Debian 的系统，使用<code class="language-text">apt</code>工具来管理包/应用的安装。</p>
 <h3 id="更换国内镜像源" style="position:relative;"><a href="#%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90" aria-label="更换国内镜像源 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>更换国内镜像源</h3>
 <p>官网源速度比较慢，可以使用中科大镜像源：</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 备份原配置文件
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 备份原配置文件</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
 
-# 替换第一行为 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
-sudo vi /etc/apt/sources.list
+<span class="token comment"># 替换第一行为 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi</span>
+<span class="token function">sudo</span> <span class="token function">vi</span> /etc/apt/sources.list
 
-# 替换第一行为 deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui
-sudo vi /etc/apt/sources.list.d/raspi.list
+<span class="token comment"># 替换第一行为 deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui</span>
+<span class="token function">sudo</span> <span class="token function">vi</span> /etc/apt/sources.list.d/raspi.list
 
-# 同步更新
-sudo apt-get update</code></pre></div>
+<span class="token comment"># 同步更新</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update</code></pre></div>
 <p>Lite 版本操作系统不带<code class="language-text">git</code>，通过下面命令安装</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo apt install git</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span></code></pre></div>
 <h2 id="文件传递" style="position:relative;"><a href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E9%80%92" aria-label="文件传递 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>文件传递</h2>
 <p>把电脑文件传到树莓派上或者反过来的需求是比较常见的，方式和工具也有很多，比如 SFTP 和 rsync：</p>
 <h3 id="sftp" style="position:relative;"><a href="#sftp" aria-label="sftp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SFTP</h3>
 <p>因为前面已经配置好了 SSH Keys，所以可以通过下面命令直接连接树莓派：</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sftp pi@192.168.0.2
-# 连接成功
-Connected to 192.168.0.2.
-# 输入 help 可以查看帮助
-sftp&gt; help</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">sftp</span> pi@192.168.0.2
+<span class="token comment"># 连接成功</span>
+Connected to <span class="token number">192.168</span>.0.2.
+<span class="token comment"># 输入 help 可以查看帮助</span>
+sftp<span class="token operator">></span> <span class="token builtin class-name">help</span></code></pre></div>
 <p>树莓派系统默认已启动 SFTP 服务，而我使用的 macOS 也自带 SFTP 命令（客户端），所以无需额外安装任何东西，直接连接即可。</p>
 <h3 id="rsync" style="position:relative;"><a href="#rsync" aria-label="rsync permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rsync</h3>
 <p>SFTP 对于多个文件，乃至整个目录的同步还不太方便，此时可以使用<code class="language-text">rsync</code>命令，<code class="language-text">rsync</code>命令非常强大，有很多参数，比如复制整个目录：</p>
-<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 注意 source/ 最后面的斜线，表示复制 source 目录内容到 /home/pi/destination
-# 如果不加斜线，则会复制后文件结构是 /home/pi/destination/source
-rsync -av source/ pi@192.168.10.102:/home/pi/destination</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 注意 source/ 最后面的斜线，表示复制 source 目录内容到 /home/pi/destination</span>
+<span class="token comment"># 如果不加斜线，则会复制后文件结构是 /home/pi/destination/source</span>
+<span class="token function">rsync</span> -av source/ pi@192.168.10.102:/home/pi/destination</code></pre></div>
 <h2 id="相关链接" style="position:relative;"><a href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5" aria-label="相关链接 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>相关链接</h2>
 <ul>
 <li><a href="https://shumeipai.nxez.com/">（国内）树莓派实验室</a></li>
