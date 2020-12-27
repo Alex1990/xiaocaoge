@@ -85,7 +85,7 @@ pi@raspberrypi:~ $
 
 使用默认密码连接非常不安全，需要修改，经过查询得知下面命令
 
-```sh
+```shell
 # 设置 root 用户密码
 sudo passwd root
 
@@ -97,7 +97,7 @@ sudo passwd pi
 
 每次连接输入密码很麻烦，而且也不如 SSH Keys 安全。首先检查自己电脑用户是否存在 ssh keys，即`~/.ssh/`目录是否有类似`id_xxx`和`id_xxx.pub`文件，如果没有，可以通过下面命令生成。
 
-```sh
+```shell
 # 生成基于 ed25519 算法的密钥
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
@@ -109,7 +109,7 @@ cat ~/.ssh/id_ed25519.pub
 
 此时可以通过下面命令验证是否设置成功：
 
-```sh
+```shell
 # 退出
 logout
 # 连接
@@ -126,7 +126,7 @@ ssh pi@192.168.0.2
 
 官网源速度比较慢，可以使用中科大镜像源：
 
-```sh
+```shell
 # 备份原配置文件
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
@@ -143,7 +143,7 @@ sudo apt-get update
 
 Lite 版本操作系统不带`git`，通过下面命令安装
 
-```sh
+```shell
 sudo apt install git
 ```
 
@@ -155,7 +155,7 @@ sudo apt install git
 
 因为前面已经配置好了 SSH Keys，所以可以通过下面命令直接连接树莓派：
 
-```sh
+```shell
 sftp pi@192.168.0.2
 # 连接成功
 Connected to 192.168.0.2.
@@ -169,7 +169,7 @@ sftp> help
 
 SFTP 对于多个文件，乃至整个目录的同步还不太方便，此时可以使用`rsync`命令，`rsync`命令非常强大，有很多参数，比如复制整个目录：
 
-```sh
+```shell
 # 注意 source/ 最后面的斜线，表示复制 source 目录内容到 /home/pi/destination
 # 如果不加斜线，则会复制后文件结构是 /home/pi/destination/source
 rsync -av source/ pi@192.168.10.102:/home/pi/destination
