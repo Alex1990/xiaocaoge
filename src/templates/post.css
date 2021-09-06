@@ -103,6 +103,25 @@
   border-radius: 0;
 }
 
+.post-entry table {
+  width: 100%;
+  border: 1px solid #eaeaea;
+  border-collapse: collapse;
+}
+
+.post-entry table th,
+.post-entry table td {
+  padding: 8px 16px;
+  border: 1px solid #eaeaea;
+}
+
+.post-entry table th {
+  background: #f6f6f6;
+}
+
+.post-entry table tr:nth-child(2n) {
+  background: #f8f8f8;
+}
 
 .post-meta {
   margin: 1em 0;
