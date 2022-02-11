@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import Layout from "../layout";
 import SEO from "../components/SEO/SEO";
 import OpenSource from "../components/OpenSource/OpenSource";
+import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 
 class OpenSourcePage extends Component {
@@ -15,6 +16,7 @@ class OpenSourcePage extends Component {
           <div className="wrapper">
             <OpenSource />
           </div>
+          <Footer config={config} />
         </div>
       </Layout>
     );
