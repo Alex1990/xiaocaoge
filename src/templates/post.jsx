@@ -2,6 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import moment from "moment";
+import "gitalk/dist/gitalk.css";
+import Gitalk from "gitalk";
 import Layout from "../layout";
 import PostTags from "../components/PostTags/PostTags";
 import SEO from "../components/SEO/SEO";
@@ -10,6 +12,20 @@ import "./prism.css";
 import "./post.css";
 
 export default class PostTemplate extends React.Component {
+  componentDidMount() {
+    const gitalk = new Gitalk({
+      clientID: '0abf71976df95878c806',
+      clientSecret: 'e90f8906919529f0c01b6b260fa384d26e2f7e90',
+      repo: 'xiaocaoge',
+      owner: 'Alex1990',
+      admin: ['Alex1990'],
+      id: window.location.pathname,
+      distractionFreeMode: false,
+    });
+    gitalk.render('gitalkContainer');
+    console.log(0)
+  }
+
   render() {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.markdownRemark;
@@ -37,6 +53,7 @@ export default class PostTemplate extends React.Component {
               <PostTags tags={post.tags} />
             </div>
           </div>
+          <div id="gitalkContainer"></div>
         </div>
       </Layout>
     );
