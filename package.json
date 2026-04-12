@@ -1,24 +1,28 @@
 {
   "name": "xiaocaoge",
-  "description": "My blog",
   "private": true,
-  "packageManager": "pnpm@10.8.1",
-  "engines": {
-    "node": ">=22"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
+  "description": "My blog",
+  "keywords": [
+    "astro"
+  ],
+  "license": "UNLICENSED",
+  "main": "n/a",
+  "scripts": {
+    "prepare": "husky",
+    "dev": "astro dev --port 3000",
+    "build": "astro build",
+    "preview": "astro preview --port 3000",
+    "lint": "oxlint src --ignore-pattern \"**/*.astro\"",
+    "format": "oxfmt .",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.1",
     "@astrojs/rss": "^4.0.12",
-    "classnames": "^2.2.6",
     "astro": "^5.7.2",
-    "gray-matter": "^4.0.3",
+    "classnames": "^2.2.6",
     "dayjs": "^1.11.13",
+    "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
     "micell": "^0.15.2",
@@ -32,23 +36,26 @@
     "@types/markdown-it": "^14.1.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
     "oxfmt": "^0.44.0",
     "oxlint": "^0.16.9",
-    "rimraf": "^6.0.1",
     "typescript": "^5.8.3"
   },
-  "keywords": [
-    "astro"
-  ],
-  "license": "UNLICENSED",
-  "main": "n/a",
-  "scripts": {
-    "prepare:public": "node scripts/prepare-public.mjs",
-    "dev": "pnpm run prepare:public && astro dev --port 3000",
-    "build": "pnpm run prepare:public && astro build",
-    "preview": "astro preview --port 3000",
-    "clean": "rimraf dist .astro public",
-    "lint": "oxlint src --ignore-pattern \"**/*.astro\"",
-    "format": "oxfmt -w ."
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,json}": [
+      "oxfmt --write",
+      "oxlint"
+    ]
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
