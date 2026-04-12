@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition height from 0 to auto</title>
+    <style title="nav">
+        /* base */
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+        a, a:visited {
+            text-decoration: none;
+            color: #099;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #f50;
+        }
+        p {
+            color: #aaa;
+        }
+        .cf:after {
+            content: '.';
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+        .demo {
+            margin-bottom: 200px;
+        }
+        .nav {
+            width: 400px;
+            background-color: #fafafa;
+            border: 1px solid #eee;
+        }
+        .nav > li {
+            float: left;
+            position: relative;
+        }
+        .nav > li > a {
+            display: block;
+            padding: 1em 2em;
+            line-height: 1;
+        }
+        .nav a:hover {
+            background-color: #eee;
+        }
+        .subnav {
+            position: absolute;
+            top: 3em;
+            width: 100%;
+            max-height: 0;
+            background-color: #fff;
+            box-shadow: 0 0 2px #ccc;
+            overflow: hidden;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+        .subnav a {
+            display: block;
+            padding: .5em;
+            text-align: center;
+        }
+
+        /* demo-1 */
+        .demo-1 .nav > li:hover .subnav {
+            max-height: 200px;
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+        /* demo-2 */
+        .demo-2 .subnav-show {
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo demo-1">
+        <h1>Transition height from 0 to auto</h1>
+        <p class="note">Support: IE10+及其他现代浏览器最新版</p>
+        <h3>方法一：设置一个比较大的 max-height</h3>
+        <ul class="nav cf">
+            <li><a href="">前端</a>
+                <ul class="subnav">
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">jQuery</a></li>
+                </ul>
+            </li>
+            <li><a href="">后端</a>
+                <ul class="subnav">
+                    <li><a href="">PHP</a></li>
+                    <li><a href="">MySQL</a></li>
+                    <li><a href="">NodeJS</a></li>
+                </ul>
+            </li>
+            <li><a href="">设计</a>
+                <ul class="subnav">
+                    <li><a href="">视觉设计</a></li>
+                    <li><a href="">交互设计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="demo demo-2">
+        <h3>方法二：通过JS获取元素实际高度，并添加到样式表中，通过切换类触发transition效果</h3>
+        <ul class="nav cf">
+            <li><a href="">前端</a>
+                <ul class="subnav">
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">jQuery</a></li>
+                </ul>
+            </li>
+            <li><a href="">后端</a>
+                <ul class="subnav">
+                    <li><a href="">PHP</a></li>
+                    <li><a href="">MySQL</a></li>
+                    <li><a href="">NodeJS</a></li>
+                </ul>
+            </li>
+            <li><a href="">设计</a>
+                <ul class="subnav">
+                    <li><a href="">视觉设计</a></li>
+                    <li><a href="">交互设计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var i,
+            ruleIndex,
+            navStyleSheet,
+            styleSheets = document.styleSheets,
+            navItems = document.querySelectorAll('.demo-2 .nav > li');
+
+        // 获取设置导航菜单的样式表/内嵌样式标签
+        for (i = 0; i < styleSheets.length; i++) {
+            if (styleSheets[i].title = 'nav') {
+                navStyleSheet = styleSheets[i];
+            }
+        }
+
+        // CSS rule插入的位置
+        ruleIndex = navStyleSheet.cssRules.length;
+
+        for (i = 0; i < navItems.length; i++) {
+
+            (function() {
+
+                var j,
+                    len,
+                    rule,
+                    height = 0,
+                    subnav = navItems[i].querySelector('.subnav'),
+                    subnavItems = subnav.querySelectorAll('li');
+
+                // 获取子菜单的子元素的累加高度，其值为子菜单的高度
+                for (j = 0, len = subnavItems.length; j < len; j++) {
+                    height += subnavItems[j].offsetHeight;
+                }
+                height += 'px';
+
+                // 为一级导航项目添加鼠标滑过事件
+                navItems[i].addEventListener('mouseover', function() {
+                    rule = '.demo-2 .subnav-show { max-height: ' + height + '; }';
+                    navStyleSheet.insertRule(rule, ruleIndex);
+
+                    subnav.classList.add('subnav-show');
+                });
+
+                // 为一级导航项目添加鼠标离开事件
+                navItems[i].addEventListener('mouseout', function() {
+                    navStyleSheet.deleteRule(ruleIndex);
+                    subnav.classList.remove('subnav-show');
+                });
+
+            })();
+        }
+    </script>
+</body>
+</html>

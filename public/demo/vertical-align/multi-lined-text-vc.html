@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Multi-Lined Text Vertically Center</title>
+    <style type="text/css">
+        h2,div,p {
+            margin:0;
+            padding:0;
+        }
+        body {
+            font:14px/1.6 Arial, sans-serif;
+        }
+        .area {
+            display: table;
+            width: 200px;
+            height: 150px;
+            background: #eee;
+        }
+        .bubble {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .bubble p {
+            border: 1px solid red;
+        }
+    </style>
+    <!--[if lt IE 8]>
+    <style type="text/css">
+        .bubble {
+            position:relative;
+        }
+        .bubble div {
+            position:absolute;
+            top: 50%;
+            width:100%;
+            background:#aaa;
+        }
+        .bubble div p {
+            position:relative;
+            top:-50%;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+	<h2>Multi-Lined Text Vertically Center</h2>
+    <div class="area">
+        <div class="bubble">
+            <div>
+                <p>To look best, text should really be centered inside this bubble both
+                vertically and horizontally.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

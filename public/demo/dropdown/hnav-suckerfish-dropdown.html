@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>水平导航栏</title>
+    <style type="text/css">
+    
+        body {
+            background-color: #fffefe;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #mainnav {
+            float: left;  /* 使无序列表框包裹住浮动的列表项 */
+            background-color: #eee; 
+        }
+        
+        .subnav {
+            position: absolute;
+            left: -999em;  /* 将二级列表定位到窗口之外 */
+            top: 40px;
+            background-color: #eee;
+        }
+        
+        #mainnav li {
+            float: left;
+            position: relative;
+        }
+        
+
+        
+        #mainnav li:hover .subnav,
+        #mainnav li.sfhover .subnav {
+            left: auto;
+        }
+        
+        #mainnav li a {
+            width: 5em;
+            text-align: center;
+            font: 20px/30px Arial, Verdana, sans-serif;
+            display: block;
+            text-decoration: none;
+            color: #404040;
+            padding: 5px 20px;
+            border-left: 1px solid #bbb;
+        }
+        
+        #mainnav .firstChild a{
+            border-left: none;
+        }
+        
+        #mainnav li:hover,
+        #mainnav li:focus,
+        #mainnav li.sfhover,
+        #mainnav li a:hover,
+        #mainnav li a:focus {  /* :focus伪类使键盘操作获得鼠标悬停效果 */
+            color: #fdfdfd;
+            background-color: #3aa;
+        }
+        
+        #mainnav .subnav li {
+            float: none;  /* 消除列表项对所包含子元素的包裹，扩展宽度 */
+        }
+        
+        #mainnav .subnav li a {
+            border-left: none;
+            border-bottom: 1px solid #dadada;
+        }
+        
+        .subnav .subLastChild a{
+            border-bottom: none;
+        }
+        
+        .subnav li a:hover {
+            color: #444;
+            background-color: #8dd;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        
+        function sfHover() {
+            var sfEls = document.getElementById("mainnav").getElementsByTagName("li");
+            for (var i=0; i<sfEls.length; i++) {
+                sfEls[i].onmouseover = function() {
+                    this.className += " sfhover";
+                }
+                sfEls[i].onmouseout = function() {
+                    this.className = this.className.replace(new RegExp(" sfhover\\b"), "");
+                }
+            }
+        }
+        
+        window.onload = sfHover;
+    </script>
+</head>
+<body>
+	<ul id="mainnav">
+		<li class="firstChild"><a href="#">Home</a></li>
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">Our Clients</a>
+            <ul class="subnav">
+            	<li><a href="#">Leadership</a></li>
+            	<li><a href="#">Involvement</a></li>
+            	<li class="subLastChild"><a href="#">Our Vision</a></li>
+            </ul>
+        </li>
+		<li><a href="#">Support</a>
+            <ul class="subnav">
+            	<li><a href="#">Blog</a></li>
+            	<li><a href="#">Downloads</a></li>
+            	<li class="subLastChild"><a href="#">FAQ</a></li>
+            </ul>
+        </li>
+		<li><a href="#">Contact Us</a></li>
+	</ul>
+</body>
+</html>

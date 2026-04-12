@@ -1,0 +1,27 @@
+<svg version="1.1" baseProfile="full" width="500" height="500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="myTextPath" d="M250,40 A210,210 0 0,1 250,460 A210,210 0 1,1 250,40" transform="rotate(-5,250,250)" />
+  </defs>
+  <g>
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(-15,250,250)" style="stroke: #fff; fill: #ff0000" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(15,250,250)" style="stroke: #fff; fill: #ff8000" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(45,250,250)" style="stroke: #fff; fill: #ffff00" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(75,250,250)" style="stroke: #fff; fill: #80ff00" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(105,250,250)" style="stroke: #fff; fill: #00ff00" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(135,250,250)" style="stroke: #fff; fill: #00ff80" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(165,250,250)" style="stroke: #fff; fill: #00ffff" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(195,250,250)" style="stroke: #fff; fill: #0080ff" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(225,250,250)" style="stroke: #fff; fill: #0000ff" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(255,250,250)" style="stroke: #fff; fill: #8000ff" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(285,250,250)" style="stroke: #fff; fill: #ff00ff" />
+    <path d="M250,250 L250,50 A200,200 0 0,1 350,77 L250,250" transform="rotate(315,250,250)" style="stroke: #fff; fill: #ff0080" />
+  </g>
+  <circle cx="250" cy="250" r="50" style="fill: #fff" />
+  <text>
+    <textPath xlink:href="#myTextPath">
+      原色　　　　　三次色　　　　次生色　　　　三次色　　　　原色　　　　三次色　　　　次生色　　　　三次色　　　　原色　　　　三次色　　　　次生色　　　　三次色
+    </textPath>
+  </text>
+</svg>

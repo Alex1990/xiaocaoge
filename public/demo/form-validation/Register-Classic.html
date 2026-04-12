@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Register Classic</title>
+    <script type="text/javascript">
+    
+    // Onload events
+    window.onload = function(){
+        var eInput = document.getElementById("email"),
+            pInput = document.getElementById("password"),
+            submit = document.getElementById("submit");
+        
+        submit.onsubmit = function(e){
+            e = e ? e : window.event;
+            
+            if ( !eInput.onblur() || !pInput.onblur() ) {
+                if ( e.preventDefault ) {
+                    e.preventDefault();
+                } else {
+                    e.returnValue = false;
+                }
+            }
+        }
+        
+        valEmail();
+        valPassword();
+    }
+    
+    // Get elements by classname
+    function getByClass(cls){
+        if (!document.getElementsByTagName){
+            return false;
+        }
+        
+        var classElems = [],
+            elems = document.getElementsByTagName("*");
+        
+        for (var e in elems) {
+            if (elems[e].className === cls) {
+                classElems[classElems.length] = elems[e];
+            }
+        }
+        return classElems;
+    }
+    
+    // Is has class
+    function hasClass(obj, cls){
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+    
+    // Add classname
+    function addClass(obj, cls){
+        if (!this.hasClass(obj, cls)) {
+            obj.className += " " + cls;
+        }
+    }
+    
+    // Remove classname
+    function removeClass(obj, cls){
+        if (hasClass(obj, cls)){
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            obj.className = obj.className.replace(reg, '');
+        }
+    }
+    
+    // Validate email adress
+    function valEmail(){
+        
+        var eInput = document.getElementById("email");
+        var eError = getByClass("e-error")[0];
+        
+        eInput.onblur = function(){
+            var ePatt = /\w+[@]\w+[.]\w+/;
+            if ( !ePatt.test(eInput.value) ) {
+                addClass(eError, "display");
+                return false;
+            } else {
+                removeClass(eError, "display");
+            }
+        }
+    }
+    
+    // Validate password
+    function valPassword(){
+        
+        var pInput = document.getElementById("password");
+        var pHint = getByClass("p-hint")[0];
+    
+        pInput.onblur = function(){
+            var pPatt = /\w-.,!@#{8,}/;
+            if ( !pPatt.test(pInput.value) ) {
+                addClass(pHint, "display");
+                return false;
+            } else {
+                removeClass(pHint, "display");
+            }
+        }
+    }
+    </script>
+    <style type="text/css">
+    /* Reset */
+    body,div,span,a,
+    h1,form,input,img,label {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font: 14px Arial, Helvetica, 微软雅黑, sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    
+    /* Register */
+    #container {
+        margin: 0 auto;
+        width: 960px;
+    }
+    #container h1 {
+        margin: 100px 0 20px;
+        color: #d53;
+        border-bottom: 1px solid #ccc;
+    }
+    .reg {
+        padding: 20px 0;
+    }
+    .reg-item {
+        padding-bottom: 15px;
+        font-size: 0;
+    }
+    .reg-item label {
+        display: inline-block;
+        width: 80px;
+        font-size: 18px;
+        text-align: right;
+        padding-right: 10px;
+    }
+    .reg-item input {
+        width: 12em;
+        height: 20px;
+        font-size: 18px;
+        padding: 5px 3px;
+        outline: none;
+        border: 1px solid #aaa;
+    }
+    .reg-item input:focus {
+        border-color: #d53;
+    }
+    .reg-item span {
+        font-size: 14px;
+    }
+    .reg-email .e-error,
+    .reg-password .p-hint {
+        margin-left: 10px;
+        padding-left: 20px;
+        color: #d00;
+        background: url(error.png) no-repeat left center;
+        display: none;
+    }
+    .reg-email .display,
+    .reg-password .display {
+        display: inline-block;
+    }
+    .reg-password .complex {
+        position: relative;
+        margin-left: 10px;
+    }
+    .reg-password .complex span {
+        color: #fff;
+        padding: 3px;
+        display: none;
+    }
+    .reg-password .complex .display {
+        display: inline-block;
+    }
+    .reg-password .weak {
+        background: #d00;
+    }
+    .reg-password .medium {
+        background: #dd0;
+    }
+    .reg-password .strong {
+        background: #0a0;
+    }
+    .reg-vercode input {
+        width: 6em;
+    }
+    .reg-vercode img {
+        vertical-align: bottom;
+        cursor: pointer;
+    }
+    .reg-sub, .agreement {
+        margin-top: 10px;
+        padding-left: 90px;
+    }
+    .reg-sub {
+        margin-top: 20px;
+    }
+    .reg-sub input {
+        font: 22px Arial, 微软雅黑, sans-serif;
+        line-height:22px;
+        letter-spacing: 5px;
+        padding: 5px 10px 5px 15px;
+        color: #fff;
+        background: #d53;
+        border: none;
+        cursor: pointer;
+        overflow:visible; /* IE6 submit space horizontally */
+    }
+    .reg a:link {
+        color: #05a;
+    }
+    .reg a:hover {
+        color: #fff;
+        background: #d53;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+	<h1>注册</h1>
+    <div class="reg">
+        <form action="#">
+            <div class="reg-item reg-email">
+                <label>邮箱</label>
+                <input type="text" id="email" name="form-email" />
+                <span class="e-error">邮箱地址格式不正确</span>
+            </div>
+            <div class="reg-item reg-password">
+                <label>密码</label>
+                <input type="password" id="password" name="form-password" />
+                <span class="p-hint">密码至少8位，可用数字、字母以及符号
+                .,_-!@#</span>
+                <span class="complex">
+                    <span class="weak">弱</span>
+                    <span class="medium">中</span>
+                    <span class="strong">强</span>
+                </span>
+            </div>
+            <div class="reg-item reg-vercode">
+                <label>验证码</label>
+                <input type="text" class="vercode-input" />
+                <img id="vercode" src="vercode.jpg" alt="" />
+                <span><a href="#">换一个</a></span>
+            </div>
+            <div class="reg-sub">
+                <input type="submit" id="submit" name="form-submit" value="注册" />
+            </div>
+            <div class="agreement">点击注册同意<a href="#">《用户协议》</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

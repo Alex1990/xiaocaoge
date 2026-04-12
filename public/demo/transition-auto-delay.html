@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition-auto-delay</title>
+    <style>
+        .demo {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            max-height: 50px;
+            overflow: hidden;
+            background-color: #0aa;
+            -webkit-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+        }
+        .demo:hover { 
+            max-height: 500px;
+        }
+        .code {
+            padding-top: 100px;
+        }
+        pre {
+            padding: .5em;
+            background-color: #eee;
+        }
+        pre > code {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p><strong>当鼠标悬停在元素上时，过渡的时间小于设置的时间；</strong></p>
+    <p><strong>当鼠标离开时，要停顿一下，元素的高度才开始减小</strong></p>
+    <div class="demo">
+        <h3><strong>Hover Me!</strong><h3>
+    </div>
+    <div class="code">
+        <p><strong>HTML</strong></p>
+        <pre><code>
+&lt;div class="demo"&gt;
+    &lt;h3&gt;&lt;strong&gt;Hover Me!&lt;/strong&gt;&lt;h3&gt;
+&lt;/div&gt;
+        </code></pre>
+        <p><strong>CSS</strong></p>
+        <pre>
+            <code>
+.demo {
+    width: 200px;
+    height: 100px;
+    max-height: 50px;
+    overflow: hidden;
+    background-color: #0aa;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+.demo:hover { 
+    max-height: 500px;
+}
+            </code>
+        </pre>
+    </div>
+    
+</body>
+</html>
