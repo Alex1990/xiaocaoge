@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
-import moment from 'moment';
+import dayjs from 'dayjs';
 import "./PostListing.css";
 
 class PostListing extends React.Component {
@@ -26,31 +25,31 @@ class PostListing extends React.Component {
     return (
       <div className="wrapper post-list">
         {/* Your post list here. */
-        postList.map((post, index) => {
-          const postYear = moment(post.date).year();
-          const article = (
-            <article key={index}>
-              <h1>
-                <Link to={post.path} key={post.title}>
-                  {post.title}
-                </Link>
-              </h1>
-              <div className="post-meta">
-                <time dateTime={post.date}>{moment(post.date).format('YYYY-MM-DD')}</time>
-              </div>
-            </article>
-          );
-          if (year !== postYear) {
-            year = postYear;
-            return (
-              <React.Fragment key={index}>
-                <div className="year-label">&#8727; {postYear} &#8727;</div>
-                {article}
-              </React.Fragment>
+          postList.map((post, index) => {
+            const postYear = dayjs(post.date).year();
+            const article = (
+              <article key={index}>
+                <h1>
+                  <a href={post.path} key={post.title}>
+                    {post.title}
+                  </a>
+                </h1>
+                <div className="post-meta">
+                  <time dateTime={post.date}>{dayjs(post.date).format('YYYY-MM-DD')}</time>
+                </div>
+              </article>
             );
-          }
-          return article;
-        })}
+            if (year !== postYear) {
+              year = postYear;
+              return (
+                <React.Fragment key={index}>
+                  <div className="year-label">&#8727; {postYear} &#8727;</div>
+                  {article}
+                </React.Fragment>
+              );
+            }
+            return article;
+          })}
       </div>
     );
   }

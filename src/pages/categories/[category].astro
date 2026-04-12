@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostListing from '../../components/PostListing/PostListing.jsx';
+import { getAllCategories, getPostsByCategoryKebab, postsToEdges } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const categories = await getAllCategories();
+  return categories.map((c) => ({
+    params: { category: c.kebab },
+    props: { label: c.label }
+  }));
+}
+
+const { label } = Astro.props as { label: string };
+const categoryKebab = Astro.params.category ?? '';
+const posts = await getPostsByCategoryKebab(categoryKebab);
+const postEdges = postsToEdges(posts);
+---
+
+<BaseLayout title={`分类：${label}`}>
+  <div class="wrapper">
+    <h1>分类：{label}</h1>
+  </div>
+  <PostListing postEdges={postEdges} />
+</BaseLayout>

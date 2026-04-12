@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostTags from '../components/PostTags/PostTags.jsx';
+import dayjs from 'dayjs';
+import { getAllPosts, getPostBySlugParam } from '../lib/posts';
+import '../templates/post.css';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slugParam }
+  }));
+}
+
+const slugParam = Astro.params.slug ?? '';
+const post = await getPostBySlugParam(slugParam);
+
+if (!post) {
+  return new Response(null, { status: 404 });
+}
+---
+
+<BaseLayout title={post.title} description={post.description ?? post.excerpt}>
+  <div class="wrapper post-entry">
+    <h1 class="post-title">{post.title}</h1>
+    <div class="post-meta">
+      {post.isoDate ? <time datetime={post.isoDate}>{dayjs(post.isoDate).format('YYYY-MM-DD')}</time> : null}
+    </div>
+    <div set:html={post.html} />
+    {post.tags.length ? <PostTags tags={post.tags} /> : null}
+  </div>
+</BaseLayout>

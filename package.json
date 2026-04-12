@@ -2,77 +2,53 @@
   "name": "xiaocaoge",
   "description": "My blog",
   "private": true,
+  "packageManager": "pnpm@10.8.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
   "dependencies": {
+    "@astrojs/react": "^4.3.1",
+    "@astrojs/rss": "^4.0.12",
     "classnames": "^2.2.6",
-    "gatsby": "^2.24.63",
-    "gatsby-image": "^2.4.19",
-    "gatsby-plugin-catch-links": "2.3.12",
-    "gatsby-plugin-feed": "^2.5.12",
-    "gatsby-plugin-google-gtag": "^4.25.0",
-    "gatsby-plugin-lodash": "^3.3.11",
-    "gatsby-plugin-manifest": "^2.4.31",
-    "gatsby-plugin-nprogress": "^2.3.11",
-    "gatsby-plugin-offline": "^3.2.28",
-    "gatsby-plugin-react-helmet": "^3.3.11",
-    "gatsby-plugin-sharp": "^2.6.36",
-    "gatsby-plugin-sitemap": "^2.4.13",
-    "gatsby-remark-autolink-headers": "^2.3.13",
-    "gatsby-remark-copy-linked-files": "^2.3.16",
-    "gatsby-remark-images": "^3.3.30",
-    "gatsby-remark-prismjs": "^3.5.13",
-    "gatsby-remark-responsive-iframe": "^2.4.14",
-    "gatsby-source-filesystem": "^2.3.30",
-    "gatsby-transformer-remark": "^2.8.35",
-    "gatsby-transformer-sharp": "^2.5.15",
-    "gitalk": "^1.7.2",
-    "jsonp": "^0.2.1",
-    "lodash": "^4.17.15",
-    "moment": "^2.23.0",
+    "astro": "^5.7.2",
+    "gray-matter": "^4.0.3",
+    "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
+    "markdown-it": "^14.1.0",
+    "micell": "^0.15.2",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.23.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
+    "prismjs": "^1.29.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "url-join": "^4.0.0"
   },
   "devDependencies": {
-    "cli-glob": "^0.1.0",
-    "eslint": "^7.10.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^3.1.4",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.21.2",
-    "gh-pages": "^3.1.0",
-    "prettier": "^2.1.2",
-    "remark-cli": "^8.0.1",
-    "remark-preset-lint-recommended": "^4.0.1",
-    "stylefmt": "^6.0.3",
-    "stylelint": "^13.7.2",
-    "stylelint-config-standard": "^20.0.0"
+    "@types/markdown-it": "^14.1.2",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "oxfmt": "^0.44.0",
+    "oxlint": "^0.16.9",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
   },
   "keywords": [
-    "gatsby"
+    "astro"
   ],
   "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
-    "develop": "gatsby develop",
-    "dev": "npm run develop",
-    "serve": "gatsby serve",
-    "build": "gatsby build",
-    "build:pp": "gatsby build --prefix-paths",
-    "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
-    "gh-pages": "gh-pages -d public",
-    "clean": "rm -rf public && rm -rf .cache",
-    "lint:js": "eslint --ext .js,.jsx .",
-    "lint:md": "remark content/posts/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
-    "format:js": "prettier '**/*.{js,jsx}' --write"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
+    "prepare:public": "node scripts/prepare-public.mjs",
+    "dev": "pnpm run prepare:public && astro dev --port 3000",
+    "build": "pnpm run prepare:public && astro build",
+    "preview": "astro preview --port 3000",
+    "clean": "rimraf dist .astro public",
+    "lint": "oxlint src --ignore-pattern \"**/*.astro\"",
+    "format": "oxfmt -w ."
   }
 }

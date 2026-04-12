@@ -50,6 +50,8 @@ jspm_packages
 
 # Build Files
 public/
+dist/
+.astro/
 .cache/
 
 # Gatsby context

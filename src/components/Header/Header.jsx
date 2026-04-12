@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classNames from 'classnames';
-import { Link } from "gatsby";
 import "./Header.css";
 
 class Header extends Component {
@@ -26,14 +25,14 @@ class Header extends Component {
       <header className={cls}>
         <div className="header-wrapper">
           <div className="logo">
-            <Link to="/">
-              <img src={config.siteLogo} alt="Site logo" title={config.siteTitle}/>
-            </Link>
+            <a href="/">
+              <img src={config.siteLogo} alt="Site logo" title={config.siteTitle} />
+            </a>
           </div>
           <div className="nav-container">
             <button
               className="nav-toggle"
-              htmltype="button"
+              type="button"
               onClick={this.handleNavToggleClick}
             >
               &equiv;
@@ -41,16 +40,16 @@ class Header extends Component {
             <nav className="nav">
               <ul>
                 <li>
-                  <Link to="/">文章</Link>
+                  <a href="/">文章</a>
                 </li>
                 <li>
-                  <Link to="/openSource">开源</Link>
+                  <a href="/openSource/">开源</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="https://onetool.net" target="_blank" rel="noopener noreferrer">在线小工具</a>
-                </li>
+                </li> */}
                 <li>
-                  <Link to="/about">关于</Link>
+                  <a href="/about/">关于</a>
                 </li>
               </ul>
             </nav>

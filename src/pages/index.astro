@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostListing from '../components/PostListing/PostListing.jsx';
+import { getAllPostEdges } from '../lib/posts';
+
+const postEdges = await getAllPostEdges();
+---
+
+<BaseLayout title="文章">
+  <PostListing postEdges={postEdges} />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllTags } from '../../lib/posts';
+
+const tags = await getAllTags();
+---
+
+<BaseLayout title="标签">
+  <div class="wrapper">
+    <h1>标签</h1>
+    <ul>
+      {tags.map((t) => (
+        <li>
+          <a href={`/tags/${t.kebab}/`}>{t.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

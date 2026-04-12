@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import _ from 'lodash';
-import jsonp from 'jsonp';
+import insertScript from 'micell/dom/insertScript';
 import "./Photography.css";
 
 class Photography extends Component {
@@ -9,15 +9,48 @@ class Photography extends Component {
     this.state = {
       data: [],
     };
+    this._cleanup = null;
   }
   componentDidMount() {
-    jsonp(`https://alex1990.github.io/photos/dist/photos.js?_t=${Date.now()}`, {
-      name: 'photosCallback',
-    }, (err, data) => {
-      if (!err) {
-        this.setState({ data });
+    const callbackName = 'photosCallback';
+    const url = `https://alex1990.github.io/photos/dist/photos.js?_t=${Date.now()}`;
+    const g = globalThis;
+    let scriptEl;
+    let timeoutId;
+
+    const cleanup = () => {
+      if (timeoutId) g.clearTimeout(timeoutId);
+      timeoutId = null;
+      if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+      scriptEl = null;
+      if (g[callbackName]) {
+        try {
+          delete g[callbackName];
+        } catch {
+          g[callbackName] = undefined;
+        }
       }
+    };
+
+    this._cleanup = cleanup;
+
+    g[callbackName] = (data) => {
+      cleanup();
+      this.setState({ data });
+    };
+
+    scriptEl = insertScript(url, {
+      onerror: () => {
+        cleanup();
+      },
     });
+
+    timeoutId = g.setTimeout(() => {
+      cleanup();
+    }, 15000);
+  }
+  componentWillUnmount() {
+    if (this._cleanup) this._cleanup();
   }
   render() {
     return (

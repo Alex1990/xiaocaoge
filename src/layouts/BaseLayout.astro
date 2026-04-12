@@ -1,0 +1,35 @@
+---
+import siteConfig from '../lib/siteConfig';
+import Header from '../components/Header/Header.jsx';
+import Footer from '../components/Footer/Footer.jsx';
+import '../layout/index.css';
+import '../templates/prism.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props as Props;
+const pageTitle = title ? `${siteConfig.siteTitle} | ${title}` : siteConfig.siteTitle;
+const metaDescription = description ?? siteConfig.siteDescription;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="icon" type="image/png" href="/favicon/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title={siteConfig.siteTitle} href={siteConfig.siteRss} />
+  </head>
+  <body>
+    <Header config={siteConfig} client:load />
+    <main class="main">
+      <slot />
+    </main>
+    <Footer config={siteConfig} />
+  </body>
+</html>

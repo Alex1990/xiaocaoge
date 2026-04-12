@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllCategories } from '../../lib/posts';
+
+const categories = await getAllCategories();
+---
+
+<BaseLayout title="分类">
+  <div class="wrapper">
+    <h1>分类</h1>
+    <ul>
+      {categories.map((c) => (
+        <li>
+          <a href={`/categories/${c.kebab}/`}>{c.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
