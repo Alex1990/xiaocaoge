@@ -24,7 +24,7 @@
     "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.2.0",
     "micell": "^0.15.2",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.29.0",
