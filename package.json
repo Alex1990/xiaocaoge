@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/react": "^4.3.1",
     "@astrojs/rss": "^4.0.12",
-    "astro": "^5.7.2",
+    "astro": "^6.4.6",
     "classnames": "^2.2.6",
     "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
