@@ -2,6 +2,7 @@
 import siteConfig from '../lib/siteConfig';
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
+import Lightbox from '../components/Lightbox/Lightbox.jsx';
 import '../styles/theme.css';
 import '../layout/index.css';
 import '../templates/prism.css';
@@ -37,5 +38,6 @@ const metaDescription = description ?? siteConfig.siteDescription;
       <slot />
     </main>
     <Footer config={siteConfig} />
+    <Lightbox client:load />
   </body>
 </html>

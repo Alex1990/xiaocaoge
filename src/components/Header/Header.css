@@ -10,6 +10,7 @@
 }
 
 .header-wrapper {
+  position: relative;
   margin: 0 auto;
   max-width: 800px;
   display: flex;
@@ -20,6 +21,18 @@
   flex: 1;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .header-wrapper {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .logo a {
