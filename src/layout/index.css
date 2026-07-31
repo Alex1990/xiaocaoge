@@ -10,6 +10,8 @@ html {
 
 body {
     margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 body,
@@ -17,6 +19,7 @@ input,
 button,
 textarea {
   font: 16px/1.7 Arial, Helvetica, Tahoma, "MiscroSoft Yahei", sans-serif;
+  color: var(--color-text);
 }
 
 .wrapper {
@@ -28,14 +31,14 @@ textarea {
 a:link,
 a:visited {
   text-decoration: none;
-  color: #066d63;
+  color: var(--color-link);
   -webkit-transition: .2s;
           transition: .2s;
 }
 
 a:hover,
 a:active {
-  color: #ff5e1f;
+  color: var(--color-link-hover);
 }
 
 .main {

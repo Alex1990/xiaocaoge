@@ -1,4 +1,4 @@
-const imported = await import('../../data/SiteConfig.mjs');
+const imported = await import("../../data/SiteConfig.mjs");
 const siteConfig = (imported as unknown as { default?: unknown }).default ?? imported;
 
 export default siteConfig as {
@@ -21,6 +21,4 @@ export default siteConfig as {
   userDescription?: string;
   userLinks?: Array<{ label: string; url: string; iconClassName: string }>;
   copyright?: string;
-  themeColor?: string;
-  backgroundColor?: string;
 };

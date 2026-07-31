@@ -2,6 +2,7 @@
 import siteConfig from '../lib/siteConfig';
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
+import '../styles/theme.css';
 import '../layout/index.css';
 import '../templates/prism.css';
 
@@ -18,6 +19,9 @@ const metaDescription = description ?? siteConfig.siteDescription;
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <script>
+      (function(){var e=localStorage.getItem("theme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;if(e==="dark"||(!e&&t))document.documentElement.setAttribute("data-theme","dark");else if(e==="light")document.documentElement.setAttribute("data-theme","light")})()
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>

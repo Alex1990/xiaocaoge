@@ -16,7 +16,7 @@
   margin: 2rem 0 0;
   font-family: serif;
   font-size: 1.5rem;
-  color: #aaa;
+  color: var(--color-text-muted);
 }
 
 @media (min-width: 768px) {
@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px dotted #aaa;
+    border-bottom: 1px dotted var(--color-text-muted);
   }
 
   .post-list .post-meta {

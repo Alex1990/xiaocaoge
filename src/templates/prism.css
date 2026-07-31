@@ -55,7 +55,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	background: var(--color-code-bg);
 }
 
 /* Inline code */
@@ -135,4 +135,80 @@ pre[class*="language-"] {
 
 .token.entity {
 	cursor: help;
+}
+
+[data-theme="dark"] code[class*="language-"],
+[data-theme="dark"] pre[class*="language-"] {
+	color: #c9d1d9;
+	text-shadow: 0 1px rgba(0,0,0,.3);
+}
+
+[data-theme="dark"] pre[class*="language-"]::-moz-selection,
+[data-theme="dark"] pre[class*="language-"] ::-moz-selection,
+[data-theme="dark"] code[class*="language-"]::-moz-selection,
+[data-theme="dark"] code[class*="language-"] ::-moz-selection {
+	background: var(--color-selection);
+}
+
+[data-theme="dark"] pre[class*="language-"]::selection,
+[data-theme="dark"] pre[class*="language-"] ::selection,
+[data-theme="dark"] code[class*="language-"]::selection,
+[data-theme="dark"] code[class*="language-"] ::selection {
+	background: var(--color-selection);
+}
+
+[data-theme="dark"] .token.comment,
+[data-theme="dark"] .token.prolog,
+[data-theme="dark"] .token.doctype,
+[data-theme="dark"] .token.cdata {
+	color: #8b949e;
+}
+
+[data-theme="dark"] .token.punctuation {
+	color: #c9d1d9;
+}
+
+[data-theme="dark"] .token.property,
+[data-theme="dark"] .token.tag,
+[data-theme="dark"] .token.boolean,
+[data-theme="dark"] .token.number,
+[data-theme="dark"] .token.constant,
+[data-theme="dark"] .token.symbol,
+[data-theme="dark"] .token.deleted {
+	color: #f0883e;
+}
+
+[data-theme="dark"] .token.selector,
+[data-theme="dark"] .token.attr-name,
+[data-theme="dark"] .token.string,
+[data-theme="dark"] .token.char,
+[data-theme="dark"] .token.builtin,
+[data-theme="dark"] .token.inserted {
+	color: #7ee787;
+}
+
+[data-theme="dark"] .token.operator,
+[data-theme="dark"] .token.entity,
+[data-theme="dark"] .token.url,
+[data-theme="dark"] .language-css .token.string,
+[data-theme="dark"] .style .token.string {
+	color: #d2a8ff;
+	background: transparent;
+}
+
+[data-theme="dark"] .token.atrule,
+[data-theme="dark"] .token.attr-value,
+[data-theme="dark"] .token.keyword {
+	color: #ff7b72;
+}
+
+[data-theme="dark"] .token.function,
+[data-theme="dark"] .token.class-name {
+	color: #d2a8ff;
+}
+
+[data-theme="dark"] .token.regex,
+[data-theme="dark"] .token.important,
+[data-theme="dark"] .token.variable {
+	color: #ffa657;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
 import "./Header.css";
 
 class Header extends Component {
@@ -12,14 +13,14 @@ class Header extends Component {
 
   handleNavToggleClick = () => {
     this.setState({ navOpened: !this.state.navOpened });
-  }
+  };
 
   render() {
     const { config } = this.props;
     const { navOpened } = this.state;
     const cls = classNames({
       header: 1,
-      'nav-opened': navOpened,
+      "nav-opened": navOpened,
     });
     return (
       <header className={cls}>
@@ -30,11 +31,7 @@ class Header extends Component {
             </a>
           </div>
           <div className="nav-container">
-            <button
-              className="nav-toggle"
-              type="button"
-              onClick={this.handleNavToggleClick}
-            >
+            <button className="nav-toggle" type="button" onClick={this.handleNavToggleClick}>
               &equiv;
             </button>
             <nav className="nav">
@@ -54,7 +51,7 @@ class Header extends Component {
               </ul>
             </nav>
           </div>
-          {/* <div className="search-container"></div> */}
+          <ThemeToggle />
         </div>
       </header>
     );

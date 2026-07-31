@@ -1,5 +1,5 @@
 .post-entry {
-  color: #333;
+  color: var(--color-text);
 }
 .post-entry .post-title {
   margin: 1em 0;
@@ -52,8 +52,8 @@
   margin-left: 0;
   margin-right: 0;
   padding: 0.5em 1em;
-  border-left: 5px solid #ddd;
-  background: #f8f8f8;
+  border-left: 5px solid var(--color-blockquote-border);
+  background: var(--color-blockquote-bg);
 }
 
 .post-entry blockquote p:last-child {
@@ -80,8 +80,8 @@
   margin: 0 1px;
   padding: 2px 3px;
   line-height: 1;
-  background: #f4f4f4;
-  border: 1px solid #eaeaea;
+  background: var(--color-code-inline-bg);
+  border: 1px solid var(--color-code-border);
   border-radius: 2px;
 }
 
@@ -89,9 +89,9 @@
   margin: 0 0 1em;
   padding: .5em 1em;
   font-size: 0.875em;
-  background: #f6f6f6;
-  border-top: 1px dotted #d8d8d8;
-  border-bottom: 1px dotted #d8d8d8;
+  background: var(--color-pre-bg);
+  border-top: 1px dotted var(--color-pre-border);
+  border-bottom: 1px dotted var(--color-pre-border);
 }
 
 .post-entry pre > code {
@@ -105,26 +105,26 @@
 
 .post-entry table {
   width: 100%;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--color-table-border);
   border-collapse: collapse;
 }
 
 .post-entry table th,
 .post-entry table td {
   padding: 8px 16px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--color-table-border);
 }
 
 .post-entry table th {
-  background: #f6f6f6;
+  background: var(--color-table-header-bg);
 }
 
 .post-entry table tr:nth-child(2n) {
-  background: #f8f8f8;
+  background: var(--color-table-stripe);
 }
 
 .post-meta {
   margin: 1em 0;
-  color: #777;
+  color: var(--color-text-secondary);
   font-size: 14px;
 }

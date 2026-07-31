@@ -22,20 +22,18 @@ export default {
     {
       label: "GitHub",
       url: "https://github.com/Alex1990",
-      iconClassName: "fa fa-github"
+      iconClassName: "fa fa-github",
     },
     {
       label: "Twitter",
       url: "https://twitter.com/AlexChaoHere",
-      iconClassName: "fa fa-twitter"
+      iconClassName: "fa fa-twitter",
     },
     {
       label: "Email",
       url: "mailto:alexchao1990@gmail.com",
-      iconClassName: "fa fa-envelope"
-    }
+      iconClassName: "fa fa-envelope",
+    },
   ],
   copyright: "Copyright © forever. Alex Chao",
-  themeColor: "#c62828",
-  backgroundColor: "#e0e0e0"
 };
