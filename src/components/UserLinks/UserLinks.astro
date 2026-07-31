@@ -1,0 +1,14 @@
+---
+import './UserLinks.css';
+
+const { config, labeled } = Astro.props;
+const { userLinks } = config;
+---
+
+{userLinks && (
+  <div class="user-links">
+    {userLinks.map((link) => (
+      <button href={link.url}>{labeled ? link.label : ''}</button>
+    ))}
+  </div>
+)}

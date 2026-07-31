@@ -1,0 +1,185 @@
+---
+import './Lightbox.css';
+---
+
+<script>
+  const MIN_SCALE = 0.5;
+  const MAX_SCALE = 8;
+  const ZOOM_STEP = 1.1;
+  const DOUBLE_CLICK_SCALE = 2.5;
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  let overlay = null;
+  let imgEl = null;
+  let badgeEl = null;
+  let loadingEl = null;
+  let state = { scale: 1, tx: 0, ty: 0 };
+  const pointers = new Map();
+  let lastPinch = null;
+
+  function applyTransform() {
+    if (!imgEl) return;
+    imgEl.style.transform = `translate(${state.tx}px, ${state.ty}px) scale(${state.scale})`;
+    if (badgeEl) badgeEl.textContent = `${Math.round(state.scale * 100)}%`;
+  }
+
+  function clampTranslate() {
+    if (!imgEl) return;
+    const halfWidth = (imgEl.clientWidth * state.scale) / 2;
+    const halfHeight = (imgEl.clientHeight * state.scale) / 2;
+    const limitX = Math.max(0, halfWidth - window.innerWidth / 2 + 100);
+    const limitY = Math.max(0, halfHeight - window.innerHeight / 2 + 100);
+    state.tx = clamp(state.tx, -limitX, limitX);
+    state.ty = clamp(state.ty, -limitY, limitY);
+  }
+
+  function zoomAt(clientX, clientY, factor) {
+    const next = clamp(state.scale * factor, MIN_SCALE, MAX_SCALE);
+    const f = next / state.scale;
+    const cxr = clientX - (window.innerWidth / 2 + state.tx);
+    const cyr = clientY - (window.innerHeight / 2 + state.ty);
+    state.scale = next;
+    state.tx += cxr * (1 - f);
+    state.ty += cyr * (1 - f);
+    clampTranslate();
+    applyTransform();
+  }
+
+  function reset() {
+    state = { scale: 1, tx: 0, ty: 0 };
+    pointers.clear();
+    lastPinch = null;
+    if (imgEl) imgEl.classList.remove('dragging');
+    applyTransform();
+  }
+
+  function open(src) {
+    if (!overlay) createOverlay();
+    reset();
+    imgEl.src = src;
+    if (loadingEl) loadingEl.style.display = '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    if (imgEl) imgEl.removeAttribute('src');
+  }
+
+  function createOverlay() {
+    overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'lightbox-close';
+    closeBtn.setAttribute('aria-label', '关闭预览');
+    closeBtn.textContent = '\u00d7';
+    closeBtn.addEventListener('click', close);
+
+    imgEl = document.createElement('img');
+    imgEl.className = 'lightbox-img';
+    imgEl.alt = '';
+    imgEl.draggable = false;
+    imgEl.addEventListener('load', () => {
+      if (loadingEl) loadingEl.style.display = 'none';
+      clampTranslate();
+      applyTransform();
+    });
+    imgEl.addEventListener('error', () => {
+      if (loadingEl) loadingEl.style.display = 'none';
+    });
+    imgEl.addEventListener('click', (e) => e.stopPropagation());
+    imgEl.addEventListener('dblclick', (e) => {
+      const target = state.scale > 1.5 ? 1 : DOUBLE_CLICK_SCALE;
+      zoomAt(e.clientX, e.clientY, target / state.scale);
+    });
+
+    imgEl.addEventListener('pointerdown', (e) => {
+      e.stopPropagation();
+      e.currentTarget.setPointerCapture(e.pointerId);
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      imgEl.classList.add('dragging');
+    });
+    imgEl.addEventListener('pointermove', (e) => {
+      const p = pointers.get(e.pointerId);
+      if (!p) return;
+      if (pointers.size >= 2) {
+        p.x = e.clientX;
+        p.y = e.clientY;
+        const pts = [...pointers.values()];
+        const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+        const midX = (pts[0].x + pts[1].x) / 2;
+        const midY = (pts[0].y + pts[1].y) / 2;
+        const last = lastPinch;
+        lastPinch = { dist, midX, midY };
+        if (last && last.dist > 0) {
+          zoomAt(midX, midY, dist / last.dist);
+          state.tx += midX - last.midX;
+          state.ty += midY - last.midY;
+          clampTranslate();
+          applyTransform();
+        }
+      } else {
+        lastPinch = null;
+        state.tx += e.clientX - p.x;
+        state.ty += e.clientY - p.y;
+        p.x = e.clientX;
+        p.y = e.clientY;
+        clampTranslate();
+        applyTransform();
+      }
+    });
+    const endPointer = (e) => {
+      pointers.delete(e.pointerId);
+      if (pointers.size === 0) {
+        lastPinch = null;
+        imgEl.classList.remove('dragging');
+      }
+    };
+    imgEl.addEventListener('pointerup', endPointer);
+    imgEl.addEventListener('pointercancel', endPointer);
+
+    loadingEl = document.createElement('span');
+    loadingEl.className = 'lightbox-loading';
+    loadingEl.textContent = '加载中…';
+
+    badgeEl = document.createElement('span');
+    badgeEl.className = 'lightbox-scale';
+    badgeEl.textContent = '100%';
+
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(imgEl);
+    overlay.appendChild(loadingEl);
+    overlay.appendChild(badgeEl);
+
+    overlay.addEventListener('click', close);
+    overlay.addEventListener(
+      'wheel',
+      (e) => {
+        e.preventDefault();
+        zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? ZOOM_STEP : 1 / ZOOM_STEP);
+      },
+      { passive: false }
+    );
+
+    document.body.appendChild(overlay);
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.button !== 0) return;
+    const target = e.target.closest('.post-entry img');
+    if (!target) return;
+    e.preventDefault();
+    open(target.currentSrc || target.src);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>

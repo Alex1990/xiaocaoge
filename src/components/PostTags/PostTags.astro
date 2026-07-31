@@ -1,0 +1,14 @@
+---
+import _ from 'lodash';
+import './PostTags.css';
+
+const { tags } = Astro.props;
+---
+
+<div class="post-tag-container">
+  {tags && tags.map((tag) => (
+    <a class="post-tag" style="text-decoration:none" href={`/tags/${_.kebabCase(tag)}/`}>
+      {tag}
+    </a>
+  ))}
+</div>

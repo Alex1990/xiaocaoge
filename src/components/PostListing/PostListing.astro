@@ -1,0 +1,39 @@
+---
+import dayjs from 'dayjs';
+import './PostListing.css';
+
+const { postEdges } = Astro.props;
+
+const entries = [];
+let year;
+for (const postEdge of postEdges) {
+  const post = {
+    path: postEdge.node.fields.slug,
+    title: postEdge.node.frontmatter.title,
+    date: postEdge.node.fields.date,
+  };
+  const postYear = dayjs(post.date).year();
+  if (year !== postYear) {
+    year = postYear;
+    entries.push({ type: 'year', year: postYear });
+  }
+  entries.push({ type: 'post', post });
+}
+---
+
+<div class="wrapper post-list">
+  {entries.map((entry) =>
+    entry.type === 'year' ? (
+      <div class="year-label">&#8727; {entry.year} &#8727;</div>
+    ) : (
+      <article>
+        <h1>
+          <a href={entry.post.path}>{entry.post.title}</a>
+        </h1>
+        <div class="post-meta">
+          <time datetime={entry.post.date}>{dayjs(entry.post.date).format('YYYY-MM-DD')}</time>
+        </div>
+      </article>
+    )
+  )}
+</div>

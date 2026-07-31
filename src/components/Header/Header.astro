@@ -1,0 +1,126 @@
+---
+import './Header.css';
+import '../ThemeToggle/ThemeToggle.css';
+
+const { config } = Astro.props;
+---
+
+<header class="header" data-header>
+  <div class="header-wrapper">
+    <div class="logo">
+      <a href="/">
+        <img src={config.siteLogo} alt="Site logo" title={config.siteTitle} />
+      </a>
+    </div>
+    <div class="nav-container">
+      <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false" data-nav-toggle>
+        &equiv;
+      </button>
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="/">文章</a>
+          </li>
+          <li>
+            <a href="/about/">关于</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="theme-toggle" data-theme-toggle>
+      <button class="theme-toggle-btn" type="button" title="切换主题" aria-expanded="false">
+        🖥️
+      </button>
+      <ul class="theme-toggle-menu">
+        <li>
+          <button type="button" class="theme-toggle-option active" data-theme-option="system">
+            <span class="theme-toggle-emoji">🖥️</span>
+            跟随系统
+          </button>
+        </li>
+        <li>
+          <button type="button" class="theme-toggle-option" data-theme-option="light">
+            <span class="theme-toggle-emoji">☀️</span>
+            明亮
+          </button>
+        </li>
+        <li>
+          <button type="button" class="theme-toggle-option" data-theme-option="dark">
+            <span class="theme-toggle-emoji">🌙</span>
+            暗黑
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const headerEl = document.querySelector('[data-header]');
+  const navToggle = headerEl?.querySelector('[data-nav-toggle]');
+  navToggle?.addEventListener('click', () => {
+    const opened = headerEl.classList.toggle('nav-opened');
+    navToggle.setAttribute('aria-expanded', String(opened));
+  });
+
+  const THEME_EMOJI = { system: '🖥️', light: '☀️', dark: '🌙' };
+
+  const root = document.documentElement;
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const themeBtn = toggle?.querySelector('.theme-toggle-btn');
+  const themeMenu = toggle?.querySelector('.theme-toggle-menu');
+  const themeOptions = [...(toggle?.querySelectorAll('[data-theme-option]') ?? [])];
+
+  const getStoredTheme = () => localStorage.getItem('theme') || 'system';
+  const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const resolveTheme = (theme) => (theme === 'system' ? (prefersDark() ? 'dark' : 'light') : theme);
+
+  function applyTheme(theme) {
+    if (theme === 'system') {
+      localStorage.removeItem('theme');
+    } else {
+      localStorage.setItem('theme', theme);
+    }
+    root.setAttribute('data-theme', resolveTheme(theme));
+  }
+
+  function renderTheme(theme) {
+    if (themeBtn) themeBtn.textContent = THEME_EMOJI[theme] ?? THEME_EMOJI.system;
+    themeOptions.forEach((opt) => {
+      opt.classList.toggle('active', opt.dataset.themeOption === theme);
+    });
+  }
+
+  function selectTheme(theme) {
+    applyTheme(theme);
+    renderTheme(theme);
+  }
+
+  function closeMenu() {
+    themeMenu?.classList.remove('open');
+    themeBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  themeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const opened = themeMenu?.classList.toggle('open');
+    themeBtn.setAttribute('aria-expanded', String(opened));
+  });
+
+  themeOptions.forEach((opt) => {
+    opt.addEventListener('click', () => {
+      selectTheme(opt.dataset.themeOption);
+      closeMenu();
+    });
+  });
+
+  document.addEventListener('click', closeMenu);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (getStoredTheme() === 'system') {
+      root.setAttribute('data-theme', resolveTheme('system'));
+    }
+  });
+
+  selectTheme(getStoredTheme());
+</script>

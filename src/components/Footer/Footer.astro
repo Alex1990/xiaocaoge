@@ -1,0 +1,12 @@
+---
+import './Footer.css';
+
+const { config } = Astro.props;
+const { copyright } = config;
+---
+
+{copyright && (
+  <footer class="footer">
+    <p class="copyright">{copyright}</p>
+  </footer>
+)}

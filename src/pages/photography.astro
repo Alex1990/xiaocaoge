@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Photography from '../components/Photography/Photography.jsx';
+import Photography from '../components/Photography/Photography.astro';
 ---
 
 <BaseLayout title="摄影">
   <div class="wrapper">
-    <Photography client:load />
+    <Photography />
   </div>
 </BaseLayout>

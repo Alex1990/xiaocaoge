@@ -1,0 +1,67 @@
+---
+import './Photography.css';
+---
+
+<div class="photography" data-photography>
+  <h1>摄影</h1>
+  <div class="collection-list"></div>
+</div>
+
+<script>
+  const callbackName = 'photosCallback';
+  const url = `https://alex1990.github.io/photos/dist/photos.js?_t=${Date.now()}`;
+  const root = document.querySelector('[data-photography] .collection-list');
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+
+  const g = globalThis;
+  let cleanup = null;
+
+  const timeoutId = g.setTimeout(() => {
+    if (cleanup) cleanup();
+  }, 15000);
+
+  g[callbackName] = (data) => {
+    if (cleanup) cleanup();
+    if (!root) return;
+    const html = (data || [])
+      .map((datum) => {
+        const meta = datum.meta || {};
+        const images = datum.images || [];
+        const items = images
+          .map(
+            (item) =>
+              `<li><a href="${escapeHtml(item.src)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(item.smallSrc)}" alt="${escapeHtml(item.smallSrc)}" width="${escapeHtml(item.smallWidth)}" height="${escapeHtml(item.smallHeight)}"></a></li>`
+          )
+          .join('');
+        return `<div class="collection"><h2>${escapeHtml(meta.date)}&nbsp;&nbsp;&nbsp;${escapeHtml(meta.title)}</h2><ul class="image-list">${items}</ul></div>`;
+      })
+      .join('');
+    root.innerHTML = html;
+  };
+
+  const scriptEl = document.createElement('script');
+  scriptEl.src = url;
+  scriptEl.onerror = () => {
+    if (cleanup) cleanup();
+  };
+  document.head.appendChild(scriptEl);
+
+  cleanup = () => {
+    g.clearTimeout(timeoutId);
+    if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+    if (g[callbackName]) {
+      try {
+        delete g[callbackName];
+      } catch {
+        g[callbackName] = undefined;
+      }
+    }
+  };
+</script>

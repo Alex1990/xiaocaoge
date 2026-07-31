@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostListing from '../components/PostListing/PostListing.jsx';
+import PostListing from '../components/PostListing/PostListing.astro';
 import { getAllPostEdges } from '../lib/posts';
 
 const postEdges = await getAllPostEdges();

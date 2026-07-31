@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostListing from '../../components/PostListing/PostListing.jsx';
+import PostListing from '../../components/PostListing/PostListing.astro';
 import { getAllCategories, getPostsByCategoryKebab, postsToEdges } from '../../lib/posts';
 
 export async function getStaticPaths() {
