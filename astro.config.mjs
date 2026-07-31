@@ -7,4 +7,7 @@ export default defineConfig({
   site: siteConfig.siteUrl,
   base,
   trailingSlash: "always",
+  build: {
+    inlineStylesheets: "always",
+  },
 });
