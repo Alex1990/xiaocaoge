@@ -12,7 +12,7 @@ tags:
 
 ## 众人拾柴火焰高
 
-在前端时间与同事讨论 [VSCode Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) 使用时，有个使用 [WebStorm](https://www.jetbrains.com/webstorm/) 的同事推荐了一个 [ACE Jump](https://plugins.jetbrains.com/plugin/7086-acejump) 插件，顿感眼前一亮，这才是最高效的光标移动到任意位置的方式，与 Chrome 上面的 Vimium 扩展思路有类似之处。于是，到 VSCode Marketplace 搜索一番，发现没有类似的，就在绝望的时候，翻看了 VSCode Vim 扩展的文档，发现提到了 [vim-easymotion](https://github.com/easymotion/vim-easymotion) 这款神级扩展，比 ACE Jump 更加强大。当然，VSCode Vim 扩展已经集成了[easymotion](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim#vim-easymotion)，但是需要手动开启，可以查看前面链接文档。
+在前段时间与同事讨论 [VSCode Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) 使用时，有个使用 [WebStorm](https://www.jetbrains.com/webstorm/) 的同事推荐了一个 [ACE Jump](https://plugins.jetbrains.com/plugin/7086-acejump) 插件，顿感眼前一亮，这才是最高效的光标移动到任意位置的方式，与 Chrome 上面的 Vimium 扩展思路有类似之处。于是，到 VSCode Marketplace 搜索一番，发现没有类似的，就在绝望的时候，翻看了 VSCode Vim 扩展的文档，发现提到了 [vim-easymotion](https://github.com/easymotion/vim-easymotion) 这款神级扩展，比 ACE Jump 更加强大。当然，VSCode Vim 扩展已经集成了[easymotion](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim#vim-easymotion)，但是需要手动开启，可以查看前面链接文档。
 
 我与右边同事讨论火热之时，左边同事向我推荐了一篇非常简单实用的 Vim 学习教程——[Learn Vim Progressively](https://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)。里面将 Vim 使用能力分成了四个等级：第一级，生存（Survive）；第二级，感觉舒适（Feel Comfortable）；第三级，更好，更强，更快（Better, Stronger, Faster）；第四级，Vim 超能力（Vim Superpowers）。我处于第三级刚刚入门水平，这一等级主要是光标移动更快更简单，我只懂部分，当然第四级也懂一点。
 

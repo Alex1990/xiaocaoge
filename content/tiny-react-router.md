@@ -240,7 +240,7 @@ app.listen(port, () => {
 });
 ```
 
-**一个完成的实现及实例可以查看 [alex1990/tiny-react-router](https://github.com/Alex1990/tiny-react-router/tree/tiny)**。
+**一个完整的实现及实例可以查看 [alex1990/tiny-react-router](https://github.com/Alex1990/tiny-react-router/tree/tiny)**。
 
 ## 功能迭代
 

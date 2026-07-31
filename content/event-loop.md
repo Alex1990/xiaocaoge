@@ -68,4 +68,4 @@ while (eventLoop.waitForTask()) {
 
 另外，记住`setTimeout`与`setInterval`的第二时间参数`time`，是指经过`time`时间之后，把第一个参数接受的回调函数安排到任务队列里面，假如此时正有任务被处理，则会延后执行。
 
-Node.js 使用 libuv 实现的 Event Loop，将不用类别任务分成了几个阶段来执行，每一个阶段都有自己的任务队列。
+Node.js 使用 libuv 实现的 Event Loop，将不同类别任务分成了几个阶段来执行，每一个阶段都有自己的任务队列。

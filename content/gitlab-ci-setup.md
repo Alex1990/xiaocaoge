@@ -12,7 +12,7 @@ tags:
   - 自动化
 ---
 
-如今，不少中小公司都采用开源的 Gitlab 来管理公司的源码了，但是并没有充分利用 Gitlab 提供的功能。比如 Gitlab CI，不少公司没有使用或者不是所有的开发者都了解并使用了，而且也没有使用其他的 CI/CD 平台。其构建和部署流程比较原始，比如前端代码，开发者首先需要在本地构建打包，然后推送到对应的源码仓库，这导致了开发者经常需要等待构建完成，而且源码仓库的体积越来越大。又比如，前端代码的部署流程，或者采用手动`git pull`代码方式，或者使用`cron`来定时执行`git pull`，前者需要登录到服务器手动执行，后者不断`git pull`造成很多资源浪费。另外，这些手动的方式也不能很好地与其他流程继承，不利于流程自动化。而采用易搭建的 Gitlab CI 可以解决这些问题，另外也可以提供一些其他的优势。
+如今，不少中小公司都采用开源的 Gitlab 来管理公司的源码了，但是并没有充分利用 Gitlab 提供的功能。比如 Gitlab CI，不少公司没有使用或者不是所有的开发者都了解并使用了，而且也没有使用其他的 CI/CD 平台。其构建和部署流程比较原始，比如前端代码，开发者首先需要在本地构建打包，然后推送到对应的源码仓库，这导致了开发者经常需要等待构建完成，而且源码仓库的体积越来越大。又比如，前端代码的部署流程，或者采用手动`git pull`代码方式，或者使用`cron`来定时执行`git pull`，前者需要登录到服务器手动执行，后者不断`git pull`造成很多资源浪费。另外，这些手动的方式也不能很好地与其他流程集成，不利于流程自动化。而采用易搭建的 Gitlab CI 可以解决这些问题，另外也可以提供一些其他的优势。
 
 ## Gitlab CI 流程图
 
@@ -41,7 +41,7 @@ tags:
 - 安装 [gitlab-ci-multi-runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)，这个就是 Gitlab Runner。需要注意版本问题，通过公司 Gitlab 网站页面【左侧菜单】-【Help】可以查看到当前使用的 Gitlab 版本，而 Gitlab Runner >= 9.0 需要 Gitlab CE/EE 9.0，所以只能安装以前的版本。通过 [gitlab-ci-multi-runner tags](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tags) 查看到当前 9.0 之前最新的版本（文档写时为`v1.11.4`），可以参考[相应安装文档](https://docs.gitlab.com/runner/install/)安装，也可以[下载现成的包](https://docs.gitlab.com/runner/install/bleeding-edge.html#download-any-other-tagged-release)，注意版本问题。
 - Gitlab Runner 配置请查看[文档](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)
 - 注册项目，运行命令`gitlab-runner register`，根据提示填写相关信息，这些信息位于 Gitlab 项目的【设置菜单】-【Runners】页面。
-- 运行`gitlab-runner run`启动，如果要开机启动可以查看 [service-related-commands](https://docs.gitlab.com/runner/commands/README.html#service-related-commands) 页面，或使用其他 service 管理工具，`gitlab-runner`命令文档请查看 [GitLab Runer Commands](https://docs.gitlab.com/runner/commands/README.html)。
+- 运行`gitlab-runner run`启动，如果要开机启动可以查看 [service-related-commands](https://docs.gitlab.com/runner/commands/README.html#service-related-commands) 页面，或使用其他 service 管理工具，`gitlab-runner`命令文档请查看 [GitLab Runner Commands](https://docs.gitlab.com/runner/commands/README.html)。
 - 项目配置，通过 [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/README.html) 文件配置 CI 要执行的任务等，其中`image`推荐配置成`image: node:6.10.3`，如果你清楚这个配置项，可自行选择，另外可以通过 [CI Lint](https://gitlab-wenba.xueba100.com:2443/ci/lint) 页面校验`.gitlab-ci.yml`文件。
 - 有时需要建立构建环境（这里是 Docker 容器）与其他服务器的 SSH 认证，比如编译后代码`git push`到 Gitlab，又或者打包后文件复制到服务器上面，可以查看 [Using SSH keys](https://gitlab.com/help/ci/ssh_keys/README.md)，来进行配置。
 

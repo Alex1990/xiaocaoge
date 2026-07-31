@@ -32,7 +32,7 @@ tags:
 
 不同的语言有各自的解决方案（包/模块），如果是使用 Node.js 可以考虑使用 [puppeteer](https://github.com/GoogleChrome/puppeteer) 来开发。Puppeteer 是通过调用 Chrome 或者 Chromium 来实现 HTML 转 PDF，因此对于 HTML/CSS/JS 支持很好。也有基于 puppeteer 封装成的 URL 转 PDF 服务 [url-to-pdf-api](https://github.com/alvarcarto/url-to-pdf-api)。当然，puppeteer 在生成 PDF 时可能存在 bug，比如 [pdf size not completely equal to the page. （l can repeat）](https://github.com/GoogleChrome/puppeteer/issues/683)。
 
-除了使用 puppeteer，也可以使用基于 Webkit 内核的 [wkhtmtopdf](https://github.com/wkhtmltopdf/wkhtmltopdf)，这个工具提供命令行方式调用，在个人需要将一些文档等转成 PDF 时很实用。
+除了使用 puppeteer，也可以使用基于 Webkit 内核的 [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf)，这个工具提供命令行方式调用，在个人需要将一些文档等转成 PDF 时很实用。
 
 ## 客户端
 

@@ -14,7 +14,7 @@ tags:
 
 [![1082834235423952739](/uploads/2013/02/1082834235423952739.jpg)](/uploads/2013/02/1082834235423952739.jpg)
 
-斑马表格的实现方法有很多种：CSS3，JavaScript，JQurey等，不过现在俺只会用CSS3或JavaScript实现。
+斑马表格的实现方法有很多种：CSS3，JavaScript，jQuery等，不过现在俺只会用CSS3或JavaScript实现。
 
 ## CSS3的E:nth-child(n)伪类选择器
 

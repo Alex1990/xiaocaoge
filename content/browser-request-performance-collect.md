@@ -14,7 +14,7 @@ tags:
 
 因此，[W3C Web 性能工作组（W3C Web Performance Working Group）](https://www.w3.org/webperf/)制定了用户测量请求性能的规范：
 
-- [High-Resolution Time](https://w3c.github.io/hr-time/)：定义了精读可达 5 微秒级别的时间类型，用于更精确的时间衡量。
+- [High-Resolution Time](https://w3c.github.io/hr-time/)：定义了精度可达 5 微秒级别的时间类型，用于更精确的时间衡量。
 - [Navigation Timing](https://w3c.github.io/navigation-timing/)：定义了页面请求性能相关信息。
 - [Resource Timing](https://w3c.github.io/resource-timing/)：定义了页面其他资源请求性能相关信息。
 - [Performance Timeline](https://w3c.github.io/performance-timeline/)：定义了获取性能测量值相关的接口，包括获取页面请求性能与页面资源请求性能相关信息。

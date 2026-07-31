@@ -15,7 +15,7 @@ Notepad++的主题、插件、快捷键等自定义还是很强大的。
 
 **主题：**
 
-一直在用默认主题，突然换成其他的还真不习惯，不习惯其他的字体、行间距、高亮配色等等。据说TextMate 的有很多好看的主题样式，好上TextMate素以此闻名吧。于是乎，就搜索了下怎么使Notepad++具有TextMate的样式，也就几步的事，可见这篇博文介绍：[步步打造Notepadd++的TextMate主题](http://www.cnblogs.com/westfly/archive/2011/06/29/2093549.html)。
+一直在用默认主题，突然换成其他的还真不习惯，不习惯其他的字体、行间距、高亮配色等等。据说TextMate 的有很多好看的主题样式，好上TextMate素以此闻名吧。于是乎，就搜索了下怎么使Notepad++具有TextMate的样式，也就几步的事，可见这篇博文介绍：[步步打造Notepad++的TextMate主题](http://www.cnblogs.com/westfly/archive/2011/06/29/2093549.html)。
 
 **插件：**
 
@@ -26,7 +26,7 @@ Notepad++的主题、插件、快捷键等自定义还是很强大的。
 * **zen coding**：代码生成功能，建议Python版
 * **JSMin**：代码压缩与格式化工具
 * **JSONViewer**
-* **Campare**
+* **Compare**
 * **Light Explorer**
 * **NppExec** ：可执行cmd
 * **JSLint** ：js代码检测

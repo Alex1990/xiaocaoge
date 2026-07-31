@@ -10,7 +10,7 @@ tags:
 
 ## 简介
 
-[Markdown](http://en.wikipedia.org/wiki/Markdown)是一种为了提高文档易读性与易写性的纯文本格式规范，其可以转换成HTML，从而可以利用CSS定制其样式。Markdown语法非常简单，而且语法符号也是为了快速书写文本而设计。Markdown发布已经很久了，其初由John Gruber与Aaron Swartz于2004年合作发布，[最初的发布版本](https://daringfireball.net/projects/markdown/basics)。直到现在，并没有一个统一的标准规范，各个实现版本会有些不同，不过基础的语法基本是相同的。Markdown已经应用在很多地方，如Github、Stackoverflow、reddit等网站，也应用于项目的ReadMe文件、一些论坛、写邮件、博客等地方。有多种实现的语言版本，也有多个系统平台上的编辑器实现，在线编辑器也有，这些可以谷歌会得到很多结果。
+[Markdown](http://en.wikipedia.org/wiki/Markdown)是一种为了提高文档易读性与易写性的纯文本格式规范，其可以转换成HTML，从而可以利用CSS定制其样式。Markdown语法非常简单，而且语法符号也是为了快速书写文本而设计。Markdown发布已经很久了，起初由John Gruber与Aaron Swartz于2004年合作发布，[最初的发布版本](https://daringfireball.net/projects/markdown/basics)。直到现在，并没有一个统一的标准规范，各个实现版本会有些不同，不过基础的语法基本是相同的。Markdown已经应用在很多地方，如Github、Stackoverflow、reddit等网站，也应用于项目的ReadMe文件、一些论坛、写邮件、博客等地方。有多种实现的语言版本，也有多个系统平台上的编辑器实现，在线编辑器也有，这些可以谷歌会得到很多结果。
 
 ## 语法
 

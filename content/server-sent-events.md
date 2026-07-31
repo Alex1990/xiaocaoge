@@ -33,7 +33,7 @@ var ev = new EventSource('/sseapi');
 默认情况下请求遵循同源策略，如果要建立跨域连接，需要设置第二个参数：
 
 ```js
-var ev = new EventSource('//api.domain.com/sse', { withCredentity: true });
+var ev = new EventSource('//api.domain.com/sse', { withCredentials: true });
 ```
 
 ### 兼容性方案
@@ -203,7 +203,7 @@ app.listen(PORT, function () {
 ## 参考
 
 - [Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
-- [Reverse Ajax, Part 1: Introduction to Commet](http://www.ibm.com/developerworks/library/wa-reverseajax1/)
+- [Reverse Ajax, Part 1: Introduction to Comet](http://www.ibm.com/developerworks/library/wa-reverseajax1/)
 - [Stream Updates with Server-Sent Events](http://www.html5rocks.com/en/tutorials/eventsource/basics/)
 - [Serve-sent events specification](https://html.spec.whatwg.org/multipage/comms.html#server-sent-events)
 - [Server-sent events support](http://caniuse.com/#feat=eventsource)

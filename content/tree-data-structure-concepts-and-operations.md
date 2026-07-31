@@ -8,7 +8,7 @@ tags:
   - 树的遍历
 ---
 
-树的递归定义：一棵树是一些节点的集合。这个集合可以是空集，此时称为**空树（empty tree）**；若非空，则一棵树由**根节点（root）**以及 0 或多个非空的**子树**组成，每一颗子树的根都被一条从根节点出发的有向边所连接。
+树的递归定义：一棵树是一些节点的集合。这个集合可以是空集，此时称为**空树（empty tree）**；若非空，则一棵树由**根节点（root）**以及 0 或多个非空的**子树**组成，每一棵子树的根都被一条从根节点出发的有向边所连接。
 
 ## 基本概念
 
@@ -317,7 +317,7 @@ void append_child(Node* parent, Node* child) {
     lastChild->nextNode = child;
     child->prevNode = lastChild;
     parent->lastChild = child;
-    cihld->parent = parent;
+    child->parent = parent;
   }
 }
 ```

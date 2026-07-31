@@ -65,7 +65,7 @@ CMYK 颜色模型的次生色为：红、绿、蓝。
 
 ### RGB
 
-RGB 颜色模型是加色模型（addtive color model）的一种，使用红、绿、蓝来相加得到一组颜色。该模型的名称就来源于三原色：红（Red）、绿（Green）、蓝（Blue）。
+RGB 颜色模型是加色模型（additive color model）的一种，使用红、绿、蓝来相加得到一组颜色。该模型的名称就来源于三原色：红（Red）、绿（Green）、蓝（Blue）。
 
 比较常用的 RGB 颜色深度是 24 位，组成一个像素的 RGB 颜色单元各占 8 位，总共可显示 2^24 = 16777216 种颜色。
 
@@ -85,7 +85,7 @@ RGBA 表示 Red、Green、Blue、Alpha，是在 RGB 的基础上增加了 Alpha 
 
 ### HSL 和 HSV
 
-HSL 表示 Hue（色相）、Saturation（饱和度）、Lightnes/Luminosity（亮度/明度），也常被称为 HLS。HSV 是英文单词 Hue、Saturation、Value 的首字母缩写，也常常被称为 HSB（B 表示 Brightness）。HSL 和 HSV 在取色器（color pickers）当中很常用，相对于 RGB 来说，更符合人类直觉。
+HSL 表示 Hue（色相）、Saturation（饱和度）、Lightness/Luminosity（亮度/明度），也常被称为 HLS。HSV 是英文单词 Hue、Saturation、Value 的首字母缩写，也常常被称为 HSB（B 表示 Brightness）。HSL 和 HSV 在取色器（color pickers）当中很常用，相对于 RGB 来说，更符合人类直觉。
 
 #### HSLA
 
@@ -133,7 +133,7 @@ Lab 颜色模型通常是指 CIELAB，也被写成_L\*a\*b\*_。
 
 色温是一个用于定义光源颜色的物理量，即把某个[黑体](https://en.wikipedia.org/wiki/Black-body_radiation)加热到其发射的光的色相与某个光源所发射的光的色相相同时，这时的黑体温度温度称为该光源的颜色温度，简称色温。单位用 K 表示。
 
-色温高于 5000K 时被称为冷色（cool colors），低于 3000K 时被称为暖色（warn colors）。这种定义只是心理学上的定义。
+色温高于 5000K 时被称为冷色（cool colors），低于 3000K 时被称为暖色（warm colors）。这种定义只是心理学上的定义。
 
 ### 暖色 Warm color
 
@@ -154,7 +154,7 @@ Lab 颜色模型通常是指 CIELAB，也被写成_L\*a\*b\*_。
 - [jquery-color](https://github.com/jquery/jquery-color)：一个 jQuery 插件，用于支持颜色操作和动画。
 - [color](https://github.com/Qix-/color)：颜色操作和转换。
 - [TinyColor](https://github.com/bgrins/TinyColor)：颜色操作和转换。
-- [spectrum](https://github.com/bgrins/spectrum)：一款空能丰富的颜色选择器，曾经 Chrome、Firefox 和 Safari 的开发者工具里面就是用的这款。
+- [spectrum](https://github.com/bgrins/spectrum)：一款功能丰富的颜色选择器，曾经 Chrome、Firefox 和 Safari 的开发者工具里面就是用的这款。
 - [react-color](https://github.com/casesandberg/react-color)：取自 Photoshop、Sketch、Chrome、Github、Twitter 等地方的颜色选择器，功能很强大。
 - [randomColor](https://github.com/davidmerfield/randomColor)：生成一组有吸引力的颜色，方法值得参考。
 - [chalk](https://github.com/chalk/chalk)：用于命令行程序的文本颜色格式化。

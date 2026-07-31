@@ -100,7 +100,7 @@ ul li { float: left;}
 
 这种技术也叫Suckerfish dropdown，关键之处就是先通过设置二级列表的left属性为一个大的负值（如-999em），将其定位到窗口之外，然后鼠标悬停时再将left属性设置成0，从而显示出来。
 
-注：虽然可以通过设置二级列表的display: none先隐藏，然后再鼠标悬停时设置diplay: block;
+注：虽然可以通过设置二级列表的display: none先隐藏，然后再鼠标悬停时设置display: block;
 
 实现同样效果，但display: none会使屏幕阅读器无法读取其中的内容，从而造成可访问性问题。
 

@@ -9,7 +9,7 @@ tags:
   - 双系统
 ---
 
-一个多月前把手中的 Mac Mini 2014 中配换成了台式机，然后装了双系统：MacOS 和 Windows 10。本来一直打算买一台 Mac Book Pro 的，后来随着“吃鸡”游戏——绝地求生，的火热，决定自己组装个台式机。另外，工作以及其他日常使用一直是 Mac，所以得装个黑苹果系统。
+一个多月前把手中的 Mac Mini 2014 中配换成了台式机，然后装了双系统：MacOS 和 Windows 10。本来一直打算买一台 MacBook Pro 的，后来随着“吃鸡”游戏——绝地求生，的火热，决定自己组装个台式机。另外，工作以及其他日常使用一直是 Mac，所以得装个黑苹果系统。
 
 虽早就听过“黑苹果”系统，但是具体如何安装，以及有什么坑却一点儿不知。正好微博关注的一个人发了个网址：[tonymacx86.com](https://www.tonymacx86.com)，我看了下不错，有推荐配置列表，安装教程，也有很多问题的解决方案。于是，就趁着双十一的来临，依照这个网站上面的推荐配置列表以及自己的预算，在京东上面攒了一台机器。我的配置列表：
 
@@ -47,7 +47,7 @@ tonymacx86.com 网站每过一段时间都会发布一个推荐配置列表，�
 
 我主要遇到的问题有：
 
-- 第一次从 U 盘安装盘启动时就卡在了苹果 Logo 的进度条哪里，看了这个解决的：https://www.tonymacx86.com/threads/hackintosh-freezes-at-beginning-of-progress-bar-clover-sierra.208648/。
+- 第一次从 U 盘安装盘启动时就卡在了苹果 Logo 的进度条那里，看了这个解决的：https://www.tonymacx86.com/threads/hackintosh-freezes-at-beginning-of-progress-bar-clover-sierra.208648/。
 - 然后还是卡在了进度条某个地方，当然我这个时候是 Log 模式，后来通过把独立显卡卸掉解决的。
 - 然后进入到系统安装好后，并且安装了独立显卡，但是系统未使用独立显卡，通过这个解决的：https://www.tonymacx86.com/threads/solving-nvidia-driver-install-loading-problems.161256/。
 - 然后是耳机没有声音，通过 [https://www.tonymacx86.com/threads/applehda-hdmi-audio-guide.234735/](https://www.tonymacx86.com/threads/applehda-hdmi-audio-guide.234735/) 解决。

@@ -10,7 +10,7 @@ tags:
 
 几个月前从知乎、公众号等多个地方陆续接触到 [Tailwind CSS](https://tailwindcss.com/) 这款 CSS 框架，当时的印象大概就是“人气很高，比 bootstrap 好用，与原子类（atom css）类似，但要强大的多”。于是，最近抽空学习了一下，并实际做了一个官方首页，得出下面评价：
 
-**Tailwind CSS 是一套几乎不写 CSS 的样式解决方案，定义了一套完整的基于 class 的 DSL，包含布局、响应式、主题、开发效率、部署等解决方法。对于无 CSS 背景的人，在快速开发产品比较适用，对于完全熟悉 Tailwind CSS 的也能带来一定价值。除此之外，不推荐适用，下面会详细分析原因。**
+**Tailwind CSS 是一套几乎不写 CSS 的样式解决方案，定义了一套完整的基于 class 的 DSL，包含布局、响应式、主题、开发效率、部署等解决方法。对于无 CSS 背景的人，在快速开发产品比较适用，对于完全熟悉 Tailwind CSS 的也能带来一定价值。除此之外，不推荐使用，下面会详细分析原因。**
 
 ## Tailwind CSS 真得可以精简样式书写吗？
 
@@ -402,4 +402,4 @@ export default function Home() {
 * [Tailwind CSS](https://tailwindcss.com/)
 * [如何评价 CSS 框架 Tailwind CSS](https://www.zhihu.com/question/337939566)
 * [Tailwind CSS （可能）是名过其实的](https://juejin.cn/post/6930196913119576077)
-* [Why Tailand Isn’t for Me](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)
+* [Why Tailwind Isn’t for Me](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)

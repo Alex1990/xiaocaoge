@@ -15,7 +15,7 @@ tags:
 <meta name="viewport" content="width=device-width">
 ```
 
-content属性还包括initial-scale，user-scalable等，不过这里不谈，它们的意思都很容易理解。这里要谈得是：viewport代表什么？device-width又是啥？
+content属性还包括initial-scale，user-scalable等，不过这里不谈，它们的意思都很容易理解。这里要谈的是：viewport代表什么？device-width又是啥？
 
 ### 先来理解两个概念：device pixels与CSS pixels。
 
@@ -43,11 +43,11 @@ html元素也即文档的宽度，来自于viewport的宽度，在PC端要加上
 
 第一代iphone的分辨率为320*480，屏幕尺寸为3.5寸。当时把layout viewport设置成与浏览器宽度一样（而手机上浏览器宽度与手机屏幕宽度一样）时，不用每次打开网页放大了，而且显示的字体与桌面上差不多，可读性很好。因此就定义了一个device-width，即是手机的屏幕分辨率，此时device翻译为“设备”还合适。
 
-但是第二代iphone发布时，屏幕的分辨率变成了480*960，而屏幕尺寸仍然为3.5寸，如果device-width仍然为手机的屏幕分辨率宽度，那么字体将会比第一代小很多。所以，维持device-width的值不变将会是个很好得选择，能与前面兼容。也因此，iphone上的device-width的值一直为320，只不过device再表示“设备”已经不合适了，实际上代表的是一个中间层。而Android也采用了这一概念，其device-width的值为360的多，360=540/1.5，360=720/2。
+但是第二代iphone发布时，屏幕的分辨率变成了480*960，而屏幕尺寸仍然为3.5寸，如果device-width仍然为手机的屏幕分辨率宽度，那么字体将会比第一代小很多。所以，维持device-width的值不变将会是个很好的选择，能与前面兼容。也因此，iphone上的device-width的值一直为320，只不过device再表示“设备”已经不合适了，实际上代表的是一个中间层。而Android也采用了这一概念，其device-width的值为360的多，360=540/1.5，360=720/2。
 
 ### 如何获取device-width的值呢？
 
-浏览器并没有提供一个获取device-width的属性或方法，但是通过`window.innerWidth`可以获取，需要注意的是，必须添加文章开头那行代码才可以跨浏览器获取。如果不添加那行代码，我自己在HTC G18/ Andoird OS 4.0.3中测试，自带浏览器/UC9.6/QQ5.0可以获取，而在Chrome33和Opera20中通过screen.width可以获取。iPhone与iPad我没测试。这是测试网页地址：
+浏览器并没有提供一个获取device-width的属性或方法，但是通过`window.innerWidth`可以获取，需要注意的是，必须添加文章开头那行代码才可以跨浏览器获取。如果不添加那行代码，我自己在HTC G18/ Android OS 4.0.3中测试，自带浏览器/UC9.6/QQ5.0可以获取，而在Chrome33和Opera20中通过screen.width可以获取。iPhone与iPad我没测试。这是测试网页地址：
 
 [/demo/viewport-screen-device-width-mobile.html](/demo/viewport-screen-device-width-mobile.html)。
 

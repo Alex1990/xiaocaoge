@@ -155,7 +155,7 @@ class StateHistory {
     }
 
     // 当前文档状态之后的所有文档状态
-    get future(): State[]) {
+    get future(): State[] {
         return this.stateHistory.slice(this.currentIndex + 1)
     }
 

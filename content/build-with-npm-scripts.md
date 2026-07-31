@@ -112,7 +112,7 @@ npm 正在执行哪个 npm script，`npm_lifecycle_event`环境变量值就会�
 
 ## Grunt vs Gulp vs npm scripts
 
-关于这三者作为构建工具的对比，已经有人说明的很切中要点，也很细致了，流行的两篇文章：[Why we should stop using Grunt & Gulp](http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/) 和 [Why I Left Gulp and Grunt for npm Scripts](https://medium.freecodecamp.com/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.d3jk4vv46)。对于文章中的观点，我也很赞同，在此只简单列下文章作者的观点。
+关于这三者作为构建工具的对比，已经有人说明得很切中要点，也很细致了，流行的两篇文章：[Why we should stop using Grunt & Gulp](http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/) 和 [Why I Left Gulp and Grunt for npm Scripts](https://medium.freecodecamp.com/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.d3jk4vv46)。对于文章中的观点，我也很赞同，在此只简单列下文章作者的观点。
 
 ### Gulp 与 Grunt 的不足
 

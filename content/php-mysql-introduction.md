@@ -43,7 +43,7 @@ tags:
 
 **获取表单值**：$_GET[‘name’]获取以GET方式传递的值，$_POST[‘name’]获取以POST方式传递的值
 
-**包含文件**：requirce()关键性的包含文件，如数据库访问；include()一般包含文件，如header.html；*_once()会检测文件是否已存在
+**包含文件**：require()关键性的包含文件，如数据库访问；include()一般包含文件，如header.html；*_once()会检测文件是否已存在
 
 **数组与字符串转换**：
 
@@ -82,7 +82,7 @@ $string = implode(glue, $array);
 *   不能重新生命函数：包含文件中已定义函数
 *   附一些错误报告关键字及错误原因：
 *   unexpected end file: 少花括号
-*   upexpected 'echo', 'if': 少分号";"
+*   unexpected 'echo', 'if': 少分号";"
 *   网页头部空白：是因为以utf-8 BOM编码的php文件，应改为utf-8无BOM编码
 *   找不到mysqli 说明数据库无法连接
 *   同一个页面先连接然后关闭，再连接（两次用require_once(MYSQL))似乎有问题

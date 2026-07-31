@@ -21,7 +21,7 @@ tags:
 
 然后就是做一个 Ubuntu Kylin 的 Live USB 版，毕竟这年头光盘少啊。经过查询有好几款工具都可以制作：LinuxLive USB Creator，Unetbootin，grub4dos 等，见此文[U盘启动 Ubuntu 的 Live USB](http://www.360doc.com/content/12/1109/10/5698935_246765552.shtml)。原来 grub4dos 也可以制作啊，但是操作可能复杂，最后我选择了简单的 LinuxLive USB Creator。从官网下载软件后，按照软件操作步骤即可，非常简单，需要注意的是有一步是要选择固定系统模式的大小，这一步保持默认的 0 就可以了，结果我选择了2040M，这样最后一步应该是对这个 2040M 的空间特殊处理了，费了较长时间。U盘毕竟不是 USB 3.0 的，写入1.5G 也要好长时间呢，还好顺利地制作了 Ubuntu Kylin 的 Live USB 版。
 
-现在可以重启电脑，进入 Live Ubuntu Kylin 系统中了，加载确实比硬盘安装慢多了。进入系统之后，需要重新安装 grub，详请可参考 [LiveCD 安装 Ubuntu 开机引导 grub](http://blog.csdn.net/haoyunsheng_1201/article/details/7266941)。关键的步骤：
+现在可以重启电脑，进入 Live Ubuntu Kylin 系统中了，加载确实比硬盘安装慢多了。进入系统之后，需要重新安装 grub，详情可参考 [LiveCD 安装 Ubuntu 开机引导 grub](http://blog.csdn.net/haoyunsheng_1201/article/details/7266941)。关键的步骤：
 
 ```shell
 sudo -i

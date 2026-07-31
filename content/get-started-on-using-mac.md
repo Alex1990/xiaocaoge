@@ -45,7 +45,7 @@ Windows/Linux 下删除一个单词快捷键是`Ctrl + Backspace`，有次发现
 
 ### 内置软件
 
-内置软件比 Windows 的丰富实用，即有办公处理套件 Keynote、Pages、Numbers，也有图书、图片、音乐和视频管理软件，浏览器比 IE 好吧，虽然自己最喜欢 Chrome。
+内置软件比 Windows 的丰富实用，既有办公处理套件 Keynote、Pages、Numbers，也有图书、图片、音乐和视频管理软件，浏览器比 IE 好吧，虽然自己最喜欢 Chrome。
 
 Mac OSX 是基于 FreeBSD 的，属于 *nix 系的，提供了与其他 Linux 相似的命令，也自带了一些编程工具，如 Python、Ruby、git 等。
 
@@ -92,7 +92,7 @@ AppeStore 用的不多，就几款软件是在这里安装的，比如有道翻�
 
 ## 双系统
 
-官方提供了 Bootcamp 来安装 Windows，安装教程网上可以查到，按步骤来操作就可以了。需要注意的就是要准备至少一个优盘，用来做安装盘及下载 Bootcamp 相关的软件。遇到的一个问题就是 Bootcampe 安装的 Windows 系统与 Mac OSX 系统时间始终相差 8 小时，可以通过修改 Windows 注册表解决，原因分析及方法参考：[完美解决苹果电脑双系统时间同步问题](http://wenku.baidu.com/link?url=tLob_jRaLDPiVrOqqhOeHGL2FtxUGny3d3KfFhDVMvh7DajwmOrk381yvmjy7KYH3gCFyUI6N-dbkUW0GAOqPiqtoA04C0WG-WQz_8MUphq)。
+官方提供了 Bootcamp 来安装 Windows，安装教程网上可以查到，按步骤来操作就可以了。需要注意的就是要准备至少一个优盘，用来做安装盘及下载 Bootcamp 相关的软件。遇到的一个问题就是 Bootcamp 安装的 Windows 系统与 Mac OSX 系统时间始终相差 8 小时，可以通过修改 Windows 注册表解决，原因分析及方法参考：[完美解决苹果电脑双系统时间同步问题](http://wenku.baidu.com/link?url=tLob_jRaLDPiVrOqqhOeHGL2FtxUGny3d3KfFhDVMvh7DajwmOrk381yvmjy7KYH3gCFyUI6N-dbkUW0GAOqPiqtoA04C0WG-WQz_8MUphq)。
 
 另外，听说 Parallels Desktop 安装的虚拟机，不仅可以方便在系统间切换，而且每个系统都能充分利用硬件的性能，有银子了一定要尝试下。
 

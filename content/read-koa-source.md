@@ -110,7 +110,7 @@ async function middleware(ctx, next) {
 
 其中`ctx`为`context`对象，`next`为下一个中间件函数。
 
-HTTP 请求（context 对象）的流向如下图所示，每一个中间件当中都可以选择是否将执行控制交给下一个中间件，直到最后一个中间执行完毕之后会执行 controller（异步函数）。
+HTTP 请求（context 对象）的流向如下图所示，每一个中间件当中都可以选择是否将执行控制交给下一个中间件，直到最后一个中间件执行完毕之后会执行 controller（异步函数）。
 
 ```txt
 receive request
@@ -142,7 +142,7 @@ Koa 项目本身代码没有多少，依赖了不少三方模块，比如
 * [cookies](https://www.npmjs.com/package/cookies)：对`Cookie`和`Set-Cookie`头部解析与处理。
 * [fresh](https://www.npmjs.com/package/fresh)：响应新鲜度判断。
 * [parseurl](https://www.npmjs.com/package/parseurl)：解析 URL，并具有 memoization 功能。
-* [statues](https://www.npmjs.com/package/statuses)：HTTP 状态码与状态信息处理。
+* [statuses](https://www.npmjs.com/package/statuses)：HTTP 状态码与状态信息处理。
 * [vary](https://www.npmjs.com/package/vary)：`Vary`头部处理。
 
 ## 总结

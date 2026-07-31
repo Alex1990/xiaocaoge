@@ -25,7 +25,7 @@ CSS1Compat：对应standard mode
 **两种模式有何区别？**主要表现在盒模型的定义上不同：
 
 strict mode中，width不包括边框和内边距；quirks mode中，width包括边框和内边距。
-在所有现代浏览器中可以通过box-sizing属性选择采用那种盒模型。
+在所有现代浏览器中可以通过box-sizing属性选择采用哪种盒模型。
 
 两种模式的其他方面的不同可以参见这两篇文章：
 

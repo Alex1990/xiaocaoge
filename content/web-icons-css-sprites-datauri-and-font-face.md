@@ -56,7 +56,7 @@ DataURI是利用Base64编码规范将图片转换成文本字符，不仅是图�
 
 **工具：**
 
-* Image to Dat URI Convertor: [http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/](http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/)
+* Image to Data URI Convertor: [http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/](http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/)
 * Convert Images to base64: [http://webcodertools.com/imagetobase64converter](http://webcodertools.com/imagetobase64converter)
 
 ## @font-face

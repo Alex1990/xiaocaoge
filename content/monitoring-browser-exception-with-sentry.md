@@ -20,7 +20,7 @@ tags:
 
 > Sentry fundamentally is a service that helps you monitor and fix crashes in realtime. The server is in Python, but it contains a full API for sending events from any language, in any application.
 
-**译**：本质上，Sentry 是一个服务，可帮助你实时监控和修复崩溃。服务端使用 Python 书写，但是包含了一套完成的接口，可用于从任何语言、任何应用发送事件。
+**译**：本质上，Sentry 是一个服务，可帮助你实时监控和修复崩溃。服务端使用 Python 书写，但是包含了一套完整的接口，可用于从任何语言、任何应用发送事件。
 
 Sentry 主要用于错误上报、监控、分析、报警，错误信息包含错误描述、调用栈、程序运行环境、网络请求、用户 Id 等信息，官方支持下面语言或框架：
 
@@ -106,7 +106,7 @@ Sentry 默认有邮件通知，但是很多人不会安装邮件客户端或者�
 
 ### 区分不同环境
 
-通常项目会存在测试环境、预发布环境、正式环境，不同环境应该对于 Sentry 不同的 Project，因为不同环境对于异常处理不同的。
+通常项目会存在测试环境、预发布环境、正式环境，不同环境应该对应 Sentry 不同的 Project，因为不同环境对于异常处理不同的。
 
 ### 跟踪用户 ID
 
@@ -155,7 +155,7 @@ beforeSend: function (event) {
 
 ### 解决问题优先级
 
-默认是按照最近发生的来排序的，解决需要按照错误数量、影响人数来从高到底更合理些，另外更关注最近一天或一周的范围要比所有时间段更合理，因为可能过去的错误已经解决了，只是 Sentry 上面还没有标记已解决。Sentry 本身提供了相对比较强大的排序和筛选功能，比如最近7天未解决的可以搜索框输入`is:unresolved lastSeen:-7d`。
+默认是按照最近发生的来排序的，解决需要按照错误数量、影响人数来从高到低更合理些，另外更关注最近一天或一周的范围要比所有时间段更合理，因为可能过去的错误已经解决了，只是 Sentry 上面还没有标记已解决。Sentry 本身提供了相对比较强大的排序和筛选功能，比如最近7天未解决的可以搜索框输入`is:unresolved lastSeen:-7d`。
 
 ### 错误数据报表
 

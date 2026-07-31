@@ -88,7 +88,7 @@ const visitor = {
 
 这里仅仅完成将`console.log(a)`转换为`console.log("a", a)`的操作，完整源码可以查看代码仓库 [babel-plugin-log](https://github.com/Alex1990/babel-plugin-log)。
 
-在写 babel 插件时出来阅读 babel-handbook 教程之外，参考其他 babel 插件的源码是一个很好的方法，比如我就参考了 [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)，尤其是测试的方法。
+在写 babel 插件时除了阅读 babel-handbook 教程之外，参考其他 babel 插件的源码是一个很好的方法，比如我就参考了 [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)，尤其是测试的方法。
 
 #### 源码
 
@@ -140,7 +140,7 @@ test/
       actual.js
       expected.js
     multiple-identifiers
-      actaul.js
+      actual.js
       expected.js
   index.spec.js
 ```
